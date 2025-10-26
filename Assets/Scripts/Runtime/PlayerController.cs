@@ -26,8 +26,12 @@ public class PlayerController : MonoBehaviour
     public float rotPitch = 0f;
     public float camPitch = 0f;
 
+    public bool cursorMode = false;
+
     // Update is called once per frame
     void Update() {
+        Cursor.lockState = cursorMode ? CursorLockMode.None : CursorLockMode.Locked;
+
         UpdateGetInput();
         if (invertY) {
             camPitch -= rotPitch * Time.deltaTime * pitchSpeed * ySensitivity;
@@ -38,11 +42,25 @@ public class PlayerController : MonoBehaviour
     }
 
     void UpdateGetInput() {
-        moveX = Input.GetAxis("Horizontal");
-        moveZ = Input.GetAxis("Vertical");
+        if (!cursorMode) {
+            moveX = Input.GetAxis("Horizontal");
+            moveZ = Input.GetAxis("Vertical");
 
-        rotYaw = Input.GetAxis("Mouse X");
-        rotPitch = Input.GetAxis("Mouse Y");
+            rotYaw = Input.GetAxis("Mouse X");
+            rotPitch = Input.GetAxis("Mouse Y");
+        } else {
+            moveX = 0;
+            moveZ = 0;
+            rotYaw = 0;
+            rotPitch = 0;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Tab)){
+            cursorMode = !cursorMode;
+        }
+
+
     }
 
     void FixedUpdate() {
