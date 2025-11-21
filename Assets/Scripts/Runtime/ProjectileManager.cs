@@ -30,7 +30,7 @@ public class ProjectileManager : MonoBehaviour {
         }
     }
 
-    public void AddProjectile(Vector3 origin, Vector3 velocity) {
+    public void AddProjectile(Vector3 origin, Vector3 velocity, float damage) {
         var projectile = projectiles[poolIndex];
         var occupiedCount = 0;
         while (projectile.enabled) {
@@ -44,7 +44,7 @@ public class ProjectileManager : MonoBehaviour {
 
             occupiedCount++;
         }
-        projectile.Init(origin, velocity);
+        projectile.Init(origin, velocity, damage);
         poolIndex++;
         poolIndex %= poolSize;
     }

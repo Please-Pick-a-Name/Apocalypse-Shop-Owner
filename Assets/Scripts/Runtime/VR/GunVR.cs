@@ -7,6 +7,7 @@ public class GunVR : MonoBehaviour {
     public Transform muzzleTransform;
     public float roundsPerMinute;
 
+    public float damage = 1;
     public float ammo = 30;
     public AudioClip gunFireSFX;
 
@@ -31,7 +32,7 @@ public class GunVR : MonoBehaviour {
         if (activated) {
             if (canFire){
                 cd = roundCooldown;
-                ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)));
+                ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
                 audioSource.PlayOneShot(gunFireSFX);
             } else {
                 // play dry ammo sound here ig

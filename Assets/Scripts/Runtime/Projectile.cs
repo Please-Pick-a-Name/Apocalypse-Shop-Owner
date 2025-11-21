@@ -5,13 +5,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
 public class Projectile : MonoBehaviour {
+    public float damage = 1;
     public Vector3 pos;
     public Vector3 vel;
     public bool physicsEnabled = false;
     public LineRenderer lineRenderer;
-    public void Init(Vector3 origin, Vector3 velocity) {
+    public void Init(Vector3 origin, Vector3 velocity, float damage) {
         pos = origin;
         vel = velocity;
+        this.damage = damage;
         enabled = true;
         physicsEnabled = true;
         lineRenderer.enabled = true;
@@ -51,8 +53,14 @@ public class Projectile : MonoBehaviour {
     }
     public void OnProjectileHit(Collider hitTarget, Vector3 hitPosition) {
         physicsEnabled = false;
+        var zombieHealth = hitTarget.GetComponentInParent<ZombieHealth>();
+        if (zombieHealth){
+            zombieHealth.OnHit(hitTarget, damage);
+        }
     }
     private void Reset() {
+        lineRenderer.SetPosition(0, Vector3.zero);
+        lineRenderer.SetPosition(1, Vector3.zero);
         lineRenderer.enabled = false;
         enabled = false;
     }

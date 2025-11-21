@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour {
     public Transform muzzleTransform;
     public float roundsPerMinute;
 
+    public float damage = 1;
     public float ammo = 30;
     public AudioClip gunFireSFX;
 
@@ -27,7 +28,7 @@ public class Gun : MonoBehaviour {
         if (Input.GetKey(KeyCode.Mouse0)) {
             if (canFire){
                 cd = roundCooldown;
-                ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)));
+                ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
                 audioSource.PlayOneShot(gunFireSFX);
             } else {
                 // play dry ammo sound here ig

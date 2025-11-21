@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
+    public static PlayerController instance;
     public float moveSpeed = 5f; // meter / second
     public float yawSpeed = 180f; // deg/sec
     public float pitchSpeed = 180f; // deg/sec
@@ -14,14 +14,18 @@ public class PlayerController : MonoBehaviour
     public GameObject camera;
 
     // Start is called before the first frame update
-    void Start()
-    {
-
+    void Start() {
+        if (instance == null) {
+            instance = this;
+        } else if (instance != this) {
+            Destroy(gameObject);
+            return;
+        }
     }
     [Header("debug stuff")]
     public float moveX = 0f;
     public float moveZ = 0f;
-    
+
     public float rotYaw = 0f;
     public float rotPitch = 0f;
     public float camPitch = 0f;
@@ -56,7 +60,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Tab)){
+        if (Input.GetKeyDown(KeyCode.Tab)) {
             cursorMode = !cursorMode;
         }
 
