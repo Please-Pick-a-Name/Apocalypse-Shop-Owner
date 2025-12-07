@@ -59694,7 +59694,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 1, z: 10}
+  m_Size: {x: 5, y: 1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &546381424
 MonoBehaviour:
@@ -59711,7 +59711,7 @@ MonoBehaviour:
   hordeGroup: {fileID: 467357534}
   prefabToSpawn: {fileID: 3367049300508886535, guid: cb4ca72b993bc9943bf3fa4f580cb0ef, type: 3}
   spawnInterval: 3
-  spawnCount: 0
+  spawnCount: 1
   cd: 0
 --- !u!4 &546381425
 Transform:
@@ -59722,7 +59722,7 @@ Transform:
   m_GameObject: {fileID: 546381422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.42, y: 0, z: 15.48}
+  m_LocalPosition: {x: -8.13, y: 0, z: 12.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

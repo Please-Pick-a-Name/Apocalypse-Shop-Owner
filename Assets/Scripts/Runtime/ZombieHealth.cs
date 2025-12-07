@@ -63,7 +63,7 @@ public class ZombieHealth : MonoBehaviour {
         }
     }
     public void OnDeath() {
-        transform.DORotate(new(0, 0, 90), 1f);
+        transform.DORotate(new(-90, 180, 0), 1f);
         isAlive = false;
     }
 }
