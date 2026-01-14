@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 [RequireComponent(typeof(AudioSource))]
 public class GunVR : MonoBehaviour {
@@ -8,7 +9,9 @@ public class GunVR : MonoBehaviour {
     public float roundsPerMinute;
 
     public float damage = 1;
-    public float ammo = 30;
+    public float ammo = 0;    
+    public XRSocketInteractor socketInteractor;
+    public AmmoController currentMagazine;
     public AudioClip gunFireSFX;
 
     [Header("debug")]
@@ -16,6 +19,8 @@ public class GunVR : MonoBehaviour {
     public float roundCooldown;
     public float cd;
     public bool activated;
+    
+
     
 
     private bool canFire;
@@ -27,10 +32,20 @@ public class GunVR : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
+        if (currentMagazine != null) {
+            ammo = currentMagazine.getAmmo();
+        } else {
+            ammo = 0;
+        }
+        
+        
         canFire = cd <= 0 && ammo > 0;
 
         if (activated) {
-            if (canFire){
+            if (canFire) {
+                currentMagazine.ammo -= 1;
+                
                 cd = roundCooldown;
                 ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
                 audioSource.PlayOneShot(gunFireSFX);
@@ -48,4 +63,7 @@ public class GunVR : MonoBehaviour {
     public void Deactivated() {
         activated = false;
     }
+    
+    
+    
 }
