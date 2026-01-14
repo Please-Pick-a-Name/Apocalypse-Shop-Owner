@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ZombieHealth : MonoBehaviour {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     public float hitPoint = 100;
     public bool isAlive = true;
     [Serializable]
@@ -63,6 +65,7 @@ public class ZombieHealth : MonoBehaviour {
         }
     }
     public void OnDeath() {
+        CurrencyManager.Instance.AddCurrency(10);
         transform.DORotate(new(-90, 180, 0), 1f);
         isAlive = false;
     }
