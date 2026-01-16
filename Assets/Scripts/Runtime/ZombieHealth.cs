@@ -39,16 +39,28 @@ public class ZombieHealth : MonoBehaviour {
     // TODO move to dedicated script
     [Header("WILL BE MOVED")]
     public float zombieMoveSpeed = 0.5f;
+    public LineRenderer path;
+    public int pathIndex = 0;
     void Update() {
         if (!isAlive) {
             return;
         }
+        if (path == null) {
+            return;
+        }
         var pos = transform.position;
-        var dir = PlayerController.instance.transform.position - pos;
-        pos += dir.normalized * zombieMoveSpeed * Time.deltaTime;
+        var dir = path.transform.TransformPoint(path.GetPosition(pathIndex)) - pos;
+        if (dir.magnitude < 0.1) {
+            if (pathIndex == path.positionCount) { // reached the end of path
+                OnReach();
+                return;
+            }
+            pathIndex++;
+            dir = path.transform.TransformPoint(path.GetPosition(pathIndex)) - pos;
+        }
+        pos += Time.deltaTime * zombieMoveSpeed * dir.normalized;
         pos.y = 0;
-        transform.position=pos;
-        transform.rotation=Quaternion.LookRotation(dir, Vector3.up);
+        transform.SetPositionAndRotation(pos, Quaternion.LookRotation(dir, Vector3.up));
     }
 
     public void OnHit(Collider collider, float damage) {
@@ -66,6 +78,11 @@ public class ZombieHealth : MonoBehaviour {
     }
     public void OnDeath() {
         CurrencyManager.Instance.AddCurrency(10);
+        transform.DORotate(new(-90, 180, 0), 1f);
+        isAlive = false;
+    }
+    public void OnReach() {
+        CurrencyManager.Instance.RemoveCurrency(50);
         transform.DORotate(new(-90, 180, 0), 1f);
         isAlive = false;
     }

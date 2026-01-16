@@ -1,16 +1,25 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
 public class ZombieSpawner : MonoBehaviour {
     BoxCollider areaToSpawn;
     public GameObject hordeGroup;
+    public GameObject pathGroup;
     public GameObject prefabToSpawn;
     public float spawnInterval = 5f;
     public int spawnCount = 1;
+    
+    [Header("auto generated")]
+    public LineRenderer[] paths;
+    public int pathCount = 0;
+
     [Header("debug")]
     public float cd = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void OnValidate() {
+        paths = pathGroup.GetComponentsInChildren<LineRenderer>();
+        pathCount = paths.Length;
+    }
     void Start() {
         areaToSpawn = GetComponent<BoxCollider>();
     }
@@ -18,9 +27,11 @@ public class ZombieSpawner : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (cd <= 0) {
-            var rndPos = GetRandomPointInBox(areaToSpawn);
-            for (int i = 0; i < spawnCount; i++) {
-                Instantiate(prefabToSpawn, rndPos, quaternion.identity, hordeGroup.transform);
+            for (int count = 0; count < spawnCount; count++) {
+                var path = paths[UnityEngine.Random.Range(0, pathCount)];
+                var zombieGO = Instantiate(prefabToSpawn, path.transform.TransformPoint(path.GetPosition(0)), quaternion.identity, hordeGroup.transform);
+                var zombieHealth = zombieGO.GetComponent<ZombieHealth>();
+                zombieHealth.path = path;
             }
             cd += spawnInterval;
         }
