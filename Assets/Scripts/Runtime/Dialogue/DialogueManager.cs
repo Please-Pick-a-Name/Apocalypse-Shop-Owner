@@ -327,5 +327,7 @@ public class DialogueManager : MonoBehaviour
         Cursor.visible = false;
         PlayerController.instance.cursorMode = false;
 
+        dialogueActive = false;
+
     }
 }
