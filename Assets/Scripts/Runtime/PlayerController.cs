@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -13,8 +14,14 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject camera;
 
+    public bool dialogueLocked = false;
+    Rigidbody rb;
+
     // Start is called before the first frame update
     void Start() {
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+
         if (instance == null) {
             instance = this;
         } else if (instance != this) {
@@ -34,7 +41,9 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        Cursor.lockState = cursorMode ? CursorLockMode.None : CursorLockMode.Locked;
+        //Cursor.lockState = cursorMode ? CursorLockMode.None : CursorLockMode.Locked;
+
+        Cursor.lockState = (cursorMode || dialogueLocked) ? CursorLockMode.None : CursorLockMode.Locked;
 
         UpdateGetInput();
         if (invertY) {
@@ -43,9 +52,18 @@ public class PlayerController : MonoBehaviour {
             camPitch += rotPitch * Time.deltaTime * pitchSpeed * ySensitivity;
         }
         camPitch = Mathf.Clamp(camPitch, -89, 89);
+        UnityEngine.Debug.Log("Cursor Mode: " + cursorMode + " Dialogue Locked: " + dialogueLocked);
     }
 
     void UpdateGetInput() {
+        if (dialogueLocked) {
+            moveX = 0;
+            moveZ = 0;
+            rotYaw = 0;
+            rotPitch = 0;
+            return;
+        }
+
         if (!cursorMode) {
             moveX = Input.GetAxis("Horizontal");
             moveZ = Input.GetAxis("Vertical");
@@ -68,8 +86,32 @@ public class PlayerController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        transform.Translate(new Vector3(moveX * Time.fixedDeltaTime, 0f, moveZ * Time.fixedDeltaTime) * moveSpeed);
+        /*transform.Translate(new Vector3(moveX * Time.fixedDeltaTime, 0f, moveZ * Time.fixedDeltaTime) * moveSpeed);
         transform.Rotate(0f, rotYaw * yawSpeed * Time.fixedDeltaTime * xSensitivity, 0f);
+        camera.transform.localRotation = Quaternion.Euler(camPitch, 0, 0);*/
+
+        Vector3 input = new Vector3(moveX, 0f, moveZ);
+
+        Vector3 move = transform.TransformDirection(input) *
+                       moveSpeed * Time.fixedDeltaTime;
+
+        rb.MovePosition(rb.position + move);
+
+        rb.MoveRotation(
+            rb.rotation *
+            Quaternion.Euler(0f, rotYaw * yawSpeed * Time.fixedDeltaTime * xSensitivity, 0f)
+        );
+
         camera.transform.localRotation = Quaternion.Euler(camPitch, 0, 0);
+    }
+
+    public void LockForDialogue() {
+        dialogueLocked = true;
+        cursorMode = true;
+    }
+
+    public void UnlockFromDialogue() {
+        dialogueLocked = false;
+        cursorMode = false;
     }
 }
