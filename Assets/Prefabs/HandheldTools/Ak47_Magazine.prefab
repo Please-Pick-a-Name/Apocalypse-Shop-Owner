@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5322655242183610659}
   - component: {fileID: 2384306216081215878}
   - component: {fileID: 8647034510023486785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ak47_Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2420270995918102246}
   - component: {fileID: 9103383692594316800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attachTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 8780849205252710725}
   - component: {fileID: 4437098264041066625}
   - component: {fileID: 7091369065707343446}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AK47_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -202,12 +202,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleTransform: {fileID: 4552116815878507297}
-  roundsPerMinute: 600
-  damage: 1
+  weaponSO: {fileID: 11400000, guid: 7186f8e5e7d8b3e48a62acec3fb4ee0a, type: 2}
   ammo: 0
-  socketInteractor: {fileID: 0}
   currentMagazine: {fileID: 0}
-  gunFireSFX: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
+  socketInteractor: {fileID: 1694461131067337641}
   audioSource: {fileID: 0}
   roundCooldown: 0
   cd: 0

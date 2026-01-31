@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 [RequireComponent(typeof(AudioSource))]
 public class GunVR : MonoBehaviour {
     public Transform muzzleTransform;
-    public float roundsPerMinute;
+    
 
-    public float damage = 1;
+    //SO data
+    private float damage;
+    private AudioClip gunFireSFX;
+    private float roundsPerMinute;
+    private bool fireMode;
+    public VRWeaponSO weaponSO;
+
+    private bool triggerReleased = true;
+    
     public float ammo = 0;    
-    public XRSocketInteractor socketInteractor;
     public AmmoController currentMagazine;
-    public AudioClip gunFireSFX;
+    public XRSocketInteractor socketInteractor;
 
     [Header("debug")]
     public AudioSource audioSource;
@@ -26,6 +34,11 @@ public class GunVR : MonoBehaviour {
     private bool canFire;
     // Start is called before the first frame update
     void Start() {
+        damage = weaponSO.damage;
+        gunFireSFX = weaponSO.gunFireSFX;
+        roundsPerMinute = weaponSO.roundsPerMinute;
+        fireMode = weaponSO.fireMode;
+        
         roundCooldown = 60f / roundsPerMinute;
         audioSource = GetComponent<AudioSource>();
     }
@@ -38,17 +51,22 @@ public class GunVR : MonoBehaviour {
         } else {
             ammo = 0;
         }
+
+
+        if (fireMode) {//full auto
+            canFire = cd <= 0 && ammo > 0;
+        } else {//semi auto
+            canFire = cd <= 0 && ammo > 0 && triggerReleased;
+        }
         
-        
-        canFire = cd <= 0 && ammo > 0;
 
         if (activated) {
             if (canFire) {
                 currentMagazine.ammo -= 1;
-                
                 cd = roundCooldown;
                 ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
                 audioSource.PlayOneShot(gunFireSFX);
+                triggerReleased =  false;
             } else {
                 // play dry ammo sound here ig
             }
@@ -62,6 +80,7 @@ public class GunVR : MonoBehaviour {
 
     public void Deactivated() {
         activated = false;
+        triggerReleased = true;
     }
     
     
