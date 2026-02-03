@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d6ce9a0b09f74604c844dd757632c904
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shopUIGroup: {instanceID: 0}
+  - shoppingListGroup: {instanceID: 0}
+  - shopItemUiPrefab: {fileID: 1046620945472053112, guid: 1b61998131e1c0f4bba37a5d48256e9e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
