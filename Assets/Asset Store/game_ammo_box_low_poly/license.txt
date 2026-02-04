@@ -1,0 +1,11 @@
+Model Information:
+* title:	game ammo box low poly
+* source:	https://sketchfab.com/3d-models/game-ammo-box-low-poly-346a00ffa12b419488d34f8263e3d55d
+* author:	malekabdeltwab (https://sketchfab.com/malekabdeltwab)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "game ammo box low poly" (https://sketchfab.com/3d-models/game-ammo-box-low-poly-346a00ffa12b419488d34f8263e3d55d) by malekabdeltwab (https://sketchfab.com/malekabdeltwab) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
