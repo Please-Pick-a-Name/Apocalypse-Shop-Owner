@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ZombieHealth : MonoBehaviour {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     public float hitPoint = 100;
     public bool isAlive = true;
+
+    public Animator anim;
+    
     [Serializable]
     public struct HealthCollider {
         public Collider collider;
@@ -78,8 +82,12 @@ public class ZombieHealth : MonoBehaviour {
     }
     public void OnDeath() {
         CurrencyManager.Instance.AddCurrency(10);
-        transform.DORotate(new(-90, 180, 0), 1f);
         isAlive = false;
+        int deathAnimation = Random.Range(1, 3);
+        switch (deathAnimation) {
+            case 1: anim.SetTrigger("Death1"); break;
+            case 2: anim.SetTrigger("Death2"); break;
+        }
     }
     public void OnReach() {
         CurrencyManager.Instance.RemoveCurrency(50);
