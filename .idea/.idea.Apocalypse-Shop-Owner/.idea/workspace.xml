@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForward.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForward.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/zombie A.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/zombie A.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Zombie A Prefab Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Zombie A Prefab Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lighting/LampPost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lighting/LampPost.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lighting/StoreLight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lighting/StoreLight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/ZombieHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/ZombieHealth.cs" afterDir="false" />
-    </list>
+    <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

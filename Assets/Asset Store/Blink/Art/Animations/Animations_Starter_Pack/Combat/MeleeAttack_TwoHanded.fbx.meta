@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6d63f48bf2bc2e64a9295d5b1a4b44bf
+guid: 337a802e1a50ad746827a890f372c41e
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -7,8 +7,8 @@ ModelImporter:
       74: 416870459326255563
     second: tpose
   - first:
-      74: 7160605529220437193
-    second: Death
+      74: 2564530799510993286
+    second: MeleeAttack_TwoHanded
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -42,7 +42,7 @@ ModelImporter:
       takeName: tpose
       internalID: 0
       firstFrame: 0
-      lastFrame: 2
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -67,11 +67,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Death
-      takeName: human_male_death_01
+      name: MeleeAttack_TwoHanded
+      takeName: hum_male_meleeattack_2H_Weapon_01
       internalID: 0
       firstFrame: 2
-      lastFrame: 102
+      lastFrame: 118
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -578,13 +578,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Death(Clone)
+    - name: MeleeAttack_TwoHanded(Clone)
       parentName: 
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Armature
-      parentName: Death(Clone)
+      parentName: MeleeAttack_TwoHanded(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -1039,5 +1039,5 @@ AssetOrigin:
   productId: 215058
   packageName: FREE - 32 RPG Animations
   packageVersion: 1.1
-  assetPath: Assets/Asset Store/Blink/Art/Animations/Animations_Starter_Pack/Combat/Death.fbx
+  assetPath: Assets/Asset Store/Blink/Art/Animations/Animations_Starter_Pack/Combat/MeleeAttack_TwoHanded.fbx
   uploadId: 489767
