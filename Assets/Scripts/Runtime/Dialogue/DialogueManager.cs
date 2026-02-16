@@ -30,6 +30,8 @@ public class DialogueManager : MonoBehaviour {
     AudioSource source;
     AudioClip talkingClip;
 
+    public List<SimpleFollowPath> relatedNPC;
+
     public bool dialogueActive { get; private set; }
 
     void Start() {
@@ -103,9 +105,52 @@ public class DialogueManager : MonoBehaviour {
             return;
         }
 
-        if (curNode is DialogueControlNode control) {
-            if (control.dialogueControl == DialogueControlNode.option.endDialogue)
+        if (curNode is DialogueNPCSpawnNode npcNode) {
+            NPCSpawner.instance.SpawnNPC(npcNode.npcToSpawn);
+
+            NodePort port = npcNode.GetOutputPort("nextNode");
+            if (port == null || !port.IsConnected) {
                 EndDialogue();
+                return;
+            }
+
+            ProcessNode(port.Connection.node);
+            return;
+        }
+
+        if (curNode is DialogueMoneyNode moneyNode) {
+            var amount = moneyNode.amountToAdd;
+            if (amount < 0) {
+                CurrencyManager.Instance.RemoveCurrency(-moneyNode.amountToAdd);
+            } else {
+                CurrencyManager.Instance.AddCurrency(moneyNode.amountToAdd);
+            }
+
+            NodePort port = moneyNode.GetOutputPort("nextNode");
+            if (port == null || !port.IsConnected) {
+                EndDialogue();
+                return;
+            }
+
+            ProcessNode(port.Connection.node);
+            return;
+        }
+
+        if (curNode is DialogueControlNode control) {
+            switch (control.dialogueControl) {
+                case DialogueControlNode.option.endDialogue:
+                    EndDialogue();
+                    break;
+                case DialogueControlNode.option.continueDialogue:
+                    //EndDialogue();
+                    break;
+                case DialogueControlNode.option.restartDialogue:
+                    //EndDialogue();
+                    break;
+                default:
+                    break;
+            }
+            return;
         }
     }
 
@@ -160,11 +205,6 @@ public class DialogueManager : MonoBehaviour {
         dialogueGroup.alpha = 1f;
         dialogueGroup.interactable = true;
         dialogueGroup.blocksRaycasts = true;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        PlayerController.instance.cursorMode = true;
-
     }
 
     public void HideDialogueInstant() {
@@ -186,12 +226,12 @@ public class DialogueManager : MonoBehaviour {
         source.PlayOneShot(panelClose);
         HideDialogueInstant();
 
-        PlayerController.instance.UnlockFromDialogue();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        PlayerController.instance.cursorMode = false;
-
         dialogueActive = false;
 
+        foreach (var npc in relatedNPC) {
+            npc.talking = false; // unlock npc
+            npc.moveDir = -1; // set them to leave
+        }
+        relatedNPC.Clear();
     }
 }

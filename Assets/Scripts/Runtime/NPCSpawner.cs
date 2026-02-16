@@ -1,16 +1,31 @@
 using UnityEngine;
 
-public class NPCSpawner : MonoBehaviour
-{
+public class NPCSpawner : MonoBehaviour {
+    public static NPCSpawner instance;
     [Header("Spawn Settings")]
+    public bool manualSpawn = true;
     public GameObject npcPrefab;
-    public Transform spawnPoint; 
+    public GameObject introNpcPrefab;
+    public Transform spawnPoint;
     public float cd;
     [Header("Path Settings")]
-    public Transform[] pathPoints; 
+    public Transform[] pathPoints;
 
-    void Update()
-    {
+    void Awake() {
+        if (instance != null & instance != this) {
+            return;
+        }
+        instance = this;
+
+        if (manualSpawn) {
+            SpawnNPC(introNpcPrefab);
+        }
+    }
+
+    void Update() {
+        if (manualSpawn) {
+            return;
+        }
         if (cd <= 0) {
             SpawnNPC();
             cd += 3;
@@ -18,17 +33,19 @@ public class NPCSpawner : MonoBehaviour
         cd -= Time.deltaTime;
     }
 
-    public void SpawnNPC()
-    {
+    public void SpawnNPC() {
+        SpawnNPC(npcPrefab);
+    }
 
+    public SimpleFollowPath SpawnNPC(GameObject myNpcPrefab) {
         Vector3 position = spawnPoint != null ? spawnPoint.position : transform.position;
-        GameObject spawnedNPC = Instantiate(npcPrefab, position, Quaternion.identity);
+        GameObject spawnedNPC = Instantiate(myNpcPrefab, position, Quaternion.identity);
 
-        SimpleFollowPath followScript = spawnedNPC.GetComponent<SimpleFollowPath>();
-        
-        if (followScript != null)
-        {
+        SimpleFollowPath followScript = spawnedNPC.GetComponentInChildren<SimpleFollowPath>();
+
+        if (followScript != null) {
             followScript.waypoints = pathPoints;
         }
+        return followScript;
     }
 }

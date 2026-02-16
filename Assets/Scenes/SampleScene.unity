@@ -68101,7 +68101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6621ed3ab0221546a5391ed3cef3200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manualSpawn: 1
   npcPrefab: {fileID: 5312354865832678996, guid: 868cc6d3cabe07a45afacbcb1e4cd60e, type: 3}
+  introNpcPrefab: {fileID: 4542491388814078785, guid: b7c61ffeedcc5954dbfd8dadc5d9fe64, type: 3}
   spawnPoint: {fileID: 1562932636}
   cd: 0
   pathPoints:
@@ -68110,10 +68112,6 @@ MonoBehaviour:
   - {fileID: 2099536577}
   - {fileID: 619966035}
   - {fileID: 1206420010}
-  - {fileID: 619966035}
-  - {fileID: 2099536577}
-  - {fileID: 210725338}
-  - {fileID: 975028092}
 --- !u!4 &1562932636
 Transform:
   m_ObjectHideFlags: 0
@@ -69062,6 +69060,7 @@ MonoBehaviour:
   textSpeed: 0.01
   dialogueBox: {fileID: 1065705919}
   dialogueGroup: {fileID: 1065705923}
+  relatedNPC: []
 --- !u!82 &1768196961
 AudioSource:
   m_ObjectHideFlags: 0
