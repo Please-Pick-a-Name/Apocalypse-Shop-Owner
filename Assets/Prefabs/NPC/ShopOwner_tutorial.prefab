@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 5352550499807946679}
   - component: {fileID: 7052304283153228960}
   - component: {fileID: 8588370935525252434}
+  - component: {fileID: -8232963250701280710}
   m_Layer: 7
   m_Name: ShopOwner_tutorial
   m_TagString: Untagged
@@ -378,6 +379,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   dialogueTree: {fileID: 11400000, guid: da374f0c3f82e23449da10d31c6bbdd1, type: 2}
+  anim: {fileID: -8232963250701280710}
 --- !u!136 &8588370935525252434
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -401,6 +403,28 @@ CapsuleCollider:
   m_Height: 5.1864157
   m_Direction: 1
   m_Center: {x: 0, y: 2.0932057, z: 0}
+--- !u!95 &-8232963250701280710
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542491388814078785}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 1b6ce2c17b8f8664e99a71e4f6f32f4d, type: 3}
+  m_Controller: {fileID: 9100000, guid: aaabdfc5a1a126541bb5dccdedd343a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4900405534092769039
 GameObject:
   m_ObjectHideFlags: 0

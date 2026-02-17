@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="" />
+    <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Characters_psx/Models/Male/Character_01.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Characters_psx/Models/Male/Character_01.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPC/ShopOwner_intro.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPC/ShopOwner_intro.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPC/ShopOwner_tutorial.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPC/ShopOwner_tutorial.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/NPCFollowPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/NPCFollowPath.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +113,8 @@
       <workItem from="1763602018430" duration="1247000" />
       <workItem from="1769043241537" duration="3601000" />
       <workItem from="1769898459186" duration="1055000" />
+      <workItem from="1770846310806" duration="5479000" />
+      <workItem from="1771279977787" duration="1278000" />
     </task>
     <servers />
   </component>

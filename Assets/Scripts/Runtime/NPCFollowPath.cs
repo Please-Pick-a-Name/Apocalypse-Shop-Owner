@@ -11,26 +11,34 @@ public class SimpleFollowPath : MonoBehaviour {
     private float currentSpeed;
     private int currentWaypointIndex = 0;
     public DialogueTree dialogueTree;
+    
+    public Animator anim;
 
     void Update() {
-        if (waypoints.Length == 0) return;
-
+        if (waypoints.Length == 0) {
+            anim.SetBool("isWalking", false);
+            return;
+        }
+        
         if (IsPathBlocked()) {
             currentSpeed = 0;
         } else {
             currentSpeed = moveSpeed;
+            anim.SetBool("isWalking", true);
         }
-
+        
         Vector3 targetPosition = waypoints[currentWaypointIndex].position;
         Vector3 direction = targetPosition - transform.position;
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
+        
         if (direction != Vector3.zero) {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
         if (talking) {
+            anim.SetBool("isWalking", false);
             return;
         }
 
@@ -40,6 +48,8 @@ public class SimpleFollowPath : MonoBehaviour {
                 DialogueManager.instance.StartDialogue(dialogueTree.nodes[0]);
                 DialogueManager.instance.relatedNPC.Add(this);
                 talking = true;
+                anim.SetTrigger("Talk");
+                anim.SetBool("isWalking", false);
             }
             if (moveDir == -1 & currentWaypointIndex == 0) {
                 Destroy(gameObject);
