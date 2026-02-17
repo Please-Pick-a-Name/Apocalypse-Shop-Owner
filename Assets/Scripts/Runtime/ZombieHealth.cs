@@ -72,10 +72,6 @@ public class ZombieHealth : MonoBehaviour {
                         case 1: anim.SetTrigger("Attack1"); break;
                         case 2: anim.SetTrigger("Attack2"); break;
                     }
-                    if (barricadeHealth != null)
-                    {
-                        barricadeHealth.TakeDamage(5);
-                    }
                 }
                 
                 OnReach();
@@ -125,5 +121,14 @@ public class ZombieHealth : MonoBehaviour {
         anim.SetLayerWeight(1, 0.8f); // hit layer
         yield return new WaitForSeconds(0.15f);
         anim.SetLayerWeight(1, 0f);
+    }
+    
+    public void attackAnimationEnd()// animation event
+    {
+        Debug.Log("Animation Finished!");
+        if (barricadeHealth != null)
+        {
+            barricadeHealth.TakeDamage(5);
+        }
     }
 }

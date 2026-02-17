@@ -220,8 +220,9 @@ PrefabInstance:
     - target: {fileID: 95540147081518318, guid: f1851660e8e43df4480fc7deebe4e4b5, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: bc76af0d5ade37747bd4f4a7a41637b8, type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 9100000, guid: 6c6ccb065652e3e429d1a85aefa93837, type: 2}
+    m_RemovedComponents:
+    - {fileID: 95540147081518318, guid: f1851660e8e43df4480fc7deebe4e4b5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4260086230310790, guid: f1851660e8e43df4480fc7deebe4e4b5, type: 3}
@@ -237,6 +238,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1569721946353704, guid: f1851660e8e43df4480fc7deebe4e4b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6540059127425766798}
+    - targetCorrespondingSourceObject: {fileID: 1569721946353704, guid: f1851660e8e43df4480fc7deebe4e4b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3870416303771696971}
   m_SourcePrefab: {fileID: 100100000, guid: f1851660e8e43df4480fc7deebe4e4b5, type: 3}
 --- !u!4 &3363653758431883843 stripped
 Transform:
@@ -272,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoint: 100
   isAlive: 1
-  anim: {fileID: 3453372068389219009}
+  anim: {fileID: 3870416303771696971}
   healthColliders:
     keys:
     - {fileID: 915725507117903863}
@@ -285,8 +289,26 @@ MonoBehaviour:
   zombieMoveSpeed: 1
   path: {fileID: 0}
   pathIndex: 0
---- !u!95 &3453372068389219009 stripped
+  attackCooldown: 2.5
+--- !u!95 &3870416303771696971
 Animator:
-  m_CorrespondingSourceObject: {fileID: 95540147081518318, guid: f1851660e8e43df4480fc7deebe4e4b5, type: 3}
-  m_PrefabInstance: {fileID: 3368616485404374575}
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367049300508886535}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2d08f5743fefe6544b433a666f476945, type: 3}
+  m_Controller: {fileID: 9100000, guid: 6c6ccb065652e3e429d1a85aefa93837, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
