@@ -36,9 +36,7 @@ public class ZombieHealth : MonoBehaviour {
         }
     }
 
-    void Start() {
-
-    }
+    
 
     // TODO move to dedicated script
     [Header("WILL BE MOVED")]
@@ -47,6 +45,11 @@ public class ZombieHealth : MonoBehaviour {
     public int pathIndex = 0;
     public float attackCooldown = 2.5f; // seconds between attacks
     private float attackCooldownTimer = 0f;
+    private BarricadeHealth barricadeHealth;
+    void Start()
+    {
+        barricadeHealth = GameObject.FindFirstObjectByType<BarricadeHealth>();
+    }
     void Update() {
         if (!isAlive) {
             return;
@@ -60,12 +63,18 @@ public class ZombieHealth : MonoBehaviour {
             if (pathIndex >= path.positionCount - 1) { // reached the end of path
                 //Attack Logic Here
                 if(attackCooldownTimer > 0) attackCooldownTimer -= Time.deltaTime;
-                if (attackCooldownTimer <= 0) {
+                if (attackCooldownTimer <= 0)
+                {
                     attackCooldownTimer = attackCooldown;
                     int attackAnimation = Random.Range(1, 3);
-                    switch (attackAnimation) {
+                    switch (attackAnimation)
+                    {
                         case 1: anim.SetTrigger("Attack1"); break;
                         case 2: anim.SetTrigger("Attack2"); break;
+                    }
+                    if (barricadeHealth != null)
+                    {
+                        barricadeHealth.TakeDamage(5);
                     }
                 }
                 
@@ -79,7 +88,6 @@ public class ZombieHealth : MonoBehaviour {
         pos.y = 0;
         transform.SetPositionAndRotation(pos, Quaternion.LookRotation(dir, Vector3.up));
     }
-
     public void OnHit(Collider collider, float damage) {
         if (!isAlive) {
             return;
