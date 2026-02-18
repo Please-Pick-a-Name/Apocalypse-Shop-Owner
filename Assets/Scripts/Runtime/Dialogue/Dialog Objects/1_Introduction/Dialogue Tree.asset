@@ -328,6 +328,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   npcToSpawn: {fileID: 4542491388814078785, guid: d2f39ebeeed8c7a4da6e2309cbe898ad, type: 3}
+  delay: 5
   prevNode: {fileID: 0}
   nextNode: {fileID: 0}
 --- !u!114 &6748474249841836977

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -106,7 +107,7 @@ public class DialogueManager : MonoBehaviour {
         }
 
         if (curNode is DialogueNPCSpawnNode npcNode) {
-            NPCSpawner.instance.SpawnNPC(npcNode.npcToSpawn);
+            InvokeAction(() => NPCSpawner.instance.SpawnNPC(npcNode.npcToSpawn), npcNode.delay);
 
             NodePort port = npcNode.GetOutputPort("nextNode");
             if (port == null || !port.IsConnected) {
@@ -156,14 +157,14 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextOption(string option) {
         if (!(curNode is OptionDialogueNode optionNode)) {
-            UnityEngine.Debug.LogError("Option button clicked, but current node is NOT an OptionDialogueNode!");
+            Debug.LogError("Option button clicked, but current node is NOT an OptionDialogueNode!");
             return;
         }
 
         NodePort port = option == "A" ? optionNode.GetOutputPort("optionA") : optionNode.GetOutputPort("optionB");
 
         if (port == null || port.Connection == null) {
-            UnityEngine.Debug.LogError("Option port not connected");
+            Debug.LogError("Option port not connected");
             return;
         }
 
@@ -200,6 +201,16 @@ public class DialogueManager : MonoBehaviour {
             yield return new WaitForSeconds(textSpeed);
         }
     }
+
+    void InvokeAction(Action action, float delay) {
+        StartCoroutine(InvokeRoutine(action, delay));
+    }
+
+    IEnumerator InvokeRoutine(Action action, float delay) {
+        yield return new WaitForSeconds(delay);
+        action?.Invoke();
+    }
+
 
     public void ShowDialogue() {
         dialogueGroup.alpha = 1f;
