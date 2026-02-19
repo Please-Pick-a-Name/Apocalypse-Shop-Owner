@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour {
         ammoCountText.SetText("Ammo: " + ammo + "/" + maxAmmo + "//" + totalAmmo);
 
         if (Input.GetKey(KeyCode.Mouse0)) {
-            if (canFire){
+            if (canFire && !PlayerController.cursorMode){
                 cd = roundCooldown;
                 ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
                 audioSource.PlayOneShot(gunFireSFX);

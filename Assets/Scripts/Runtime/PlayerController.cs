@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject camera;
 
-    public bool dialogueLocked = false;
+    public static bool dialogueLocked = false;
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     public float rotPitch = 0f;
     public float camPitch = 0f;
 
-    public bool cursorMode = false;
+    public static bool cursorMode = false;
 
     // Update is called once per frame
     void Update() {
@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour {
             moveZ = 0;
             rotYaw = 0;
             rotPitch = 0;
+
             return;
         }
 
