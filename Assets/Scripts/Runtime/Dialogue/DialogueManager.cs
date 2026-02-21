@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour {
     Queue<string> sentences = new Queue<string>();
     AudioSource source;
     AudioClip talkingClip;
+    private Coroutine sentenseCoroutine;
 
     public List<SimpleFollowPath> relatedNPC;
 
@@ -54,13 +55,17 @@ public class DialogueManager : MonoBehaviour {
         dialogueCanvasGroup.interactable = true;
         dialogueCanvasGroup.blocksRaycasts = true;*/
 
-        StopAllCoroutines();
+        if (sentenseCoroutine != null){
+            StopCoroutine(sentenseCoroutine);
+        }
 
         ProcessNode(rootNode);
     }
 
     void ProcessNode(Node node) {
-        StopAllCoroutines();
+        if (sentenseCoroutine != null){
+            StopCoroutine(sentenseCoroutine);
+        }
         curNode = node;
 
         if (curNode is OptionDialogueNode options) {
@@ -187,8 +192,10 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void DisplaySentence() {
-        StopAllCoroutines();
-        StartCoroutine(RenderSentence(sentences.Dequeue()));
+        if (sentenseCoroutine != null){
+            StopCoroutine(sentenseCoroutine);
+        }
+        sentenseCoroutine = StartCoroutine(RenderSentence(sentences.Dequeue()));
     }
 
     IEnumerator RenderSentence(string sentence) {
@@ -225,14 +232,9 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void EndDialogue() {
-        /*dialogueActive = false;
-        PlayerController.instance.UnlockFromDialogue();
-
-        StopAllCoroutines();
-        source.PlayOneShot(panelClose);
-        transform.DOLocalMove(hidePanelPos, panelAnimationTime);*/
-
-        StopAllCoroutines();
+        if (sentenseCoroutine != null){
+            StopCoroutine(sentenseCoroutine);
+        }
 
         source.PlayOneShot(panelClose);
         HideDialogueInstant();

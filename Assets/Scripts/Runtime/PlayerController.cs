@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -14,7 +13,6 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject camera;
 
-    public static bool dialogueLocked = false;
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -39,12 +37,12 @@ public class PlayerController : MonoBehaviour {
 
     public static bool cursorMode = false;
 
+    void Awake() {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     // Update is called once per frame
     void Update() {
-        //Cursor.lockState = cursorMode ? CursorLockMode.None : CursorLockMode.Locked;
-
-        Cursor.lockState = (cursorMode || dialogueLocked) ? CursorLockMode.None : CursorLockMode.Locked;
-
         UpdateGetInput();
         if (invertY) {
             camPitch -= rotPitch * Time.deltaTime * pitchSpeed * ySensitivity;
@@ -52,19 +50,10 @@ public class PlayerController : MonoBehaviour {
             camPitch += rotPitch * Time.deltaTime * pitchSpeed * ySensitivity;
         }
         camPitch = Mathf.Clamp(camPitch, -89, 89);
-        UnityEngine.Debug.Log("Cursor Mode: " + cursorMode + " Dialogue Locked: " + dialogueLocked);
+        Debug.Log("Cursor Mode: " + cursorMode);
     }
 
     void UpdateGetInput() {
-        if (dialogueLocked) {
-            moveX = 0;
-            moveZ = 0;
-            rotYaw = 0;
-            rotPitch = 0;
-
-            return;
-        }
-
         if (!cursorMode) {
             moveX = Input.GetAxis("Horizontal");
             moveZ = Input.GetAxis("Vertical");
@@ -80,10 +69,12 @@ public class PlayerController : MonoBehaviour {
 
 
         if (Input.GetKeyDown(KeyCode.Tab)) {
-            cursorMode = !cursorMode;
+            if (cursorMode) {
+                DisableCursor();
+            } else {
+                EnableCursor();
+            }
         }
-
-
     }
 
     void FixedUpdate() {
@@ -106,13 +97,15 @@ public class PlayerController : MonoBehaviour {
         camera.transform.localRotation = Quaternion.Euler(camPitch, 0, 0);
     }
 
-    public void LockForDialogue() {
-        dialogueLocked = true;
+    public void EnableCursor() {
         cursorMode = true;
+        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
     }
 
-    public void UnlockFromDialogue() {
-        dialogueLocked = false;
+    public void DisableCursor() {
         cursorMode = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 }
