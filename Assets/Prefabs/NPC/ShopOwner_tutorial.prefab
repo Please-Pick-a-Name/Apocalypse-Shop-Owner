@@ -370,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 2
   stoppingDistance: 1.5
   rotationSpeed: 5
   moveDir: 1

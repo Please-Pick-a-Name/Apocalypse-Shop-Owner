@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SimpleFollowPath : MonoBehaviour {
     public Transform[] waypoints;
+    [Tooltip("2.5 seems to match animation walk speed perfectly but feels too fast")]
     public float moveSpeed = 1f;
     public float stoppingDistance;
     public float rotationSpeed = 5f;
