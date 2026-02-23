@@ -125,7 +125,6 @@ public class ZombieHealth : MonoBehaviour {
     
     public void attackAnimationEnd()// animation event
     {
-        Debug.Log("Animation Finished!");
         if (barricadeHealth != null)
         {
             barricadeHealth.TakeDamage(5);

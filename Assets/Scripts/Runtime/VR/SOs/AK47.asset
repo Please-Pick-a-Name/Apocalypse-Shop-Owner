@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AK47
   m_EditorClassIdentifier: 
   roundsPerMinute: 600
-  damage: 1
+  damage: 10
   gunFireSFX: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
   fireMode: 1

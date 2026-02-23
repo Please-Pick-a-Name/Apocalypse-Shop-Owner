@@ -6,10 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Blink/Art/Animations/Animations_Starter_Pack/Combat/MeleeAttack_OneHanded.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Blink/Art/Animations/Animations_Starter_Pack/Combat/MeleeAttack_OneHanded.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForward.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForward.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Zombie A Prefab Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Zombie A Prefab Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Ak47(VR).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Ak47(VR).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.9/Starter Assets/Prefabs/XR Origin (XR Rig).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.9/Starter Assets/Prefabs/XR Origin (XR Rig).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VRGunTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VRGunTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/GunShopManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/GunShopManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/VR/SOs/AK47.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/VR/SOs/AK47.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/ZombieHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/ZombieHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +119,8 @@
       <workItem from="1769043241537" duration="3601000" />
       <workItem from="1769898459186" duration="1055000" />
       <workItem from="1770846310806" duration="5479000" />
-      <workItem from="1771279977787" duration="3418000" />
+      <workItem from="1771279977787" duration="6329000" />
+      <workItem from="1771801546705" duration="2761000" />
     </task>
     <servers />
   </component>

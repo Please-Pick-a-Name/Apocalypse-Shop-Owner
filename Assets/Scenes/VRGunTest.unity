@@ -131,10 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
-    - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -175,10 +171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4778211696441940833, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      propertyPath: m_UIScrollingEnabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -192,25 +184,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1094866651841803182, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2276158226410453760, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3013692575539666071, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 3542316036824164012, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
       propertyPath: m_Name
       value: Ak47(VR)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3542316036824164012, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3804812753628333291, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
       propertyPath: m_LocalPosition.x
@@ -251,14 +227,6 @@ PrefabInstance:
     - target: {fileID: 3804812753628333291, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5922683533835328039, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367784311059210710, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

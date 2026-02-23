@@ -72,7 +72,7 @@ public class GunShopManager : MonoBehaviour {
 
     public void SpawnSomething(GameObject toSpawn) {
         var gameObject = Instantiate(toSpawn);
-        gameObject.transform.position = PlayerController.instance.camera.transform.TransformPoint(0, 0, 0.2f);
+        gameObject.transform.position = new Vector3(-9.867f, 1.084f, -4.805f);
     }
 
     /* void Update() {

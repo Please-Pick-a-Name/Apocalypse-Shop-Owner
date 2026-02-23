@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4552116815878507297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3935471023475033071}
   - component: {fileID: 5900029132534592315}
   - component: {fileID: 6609503970603454900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AK47_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2475331329504612867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrabOffsetPrimary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 625487093390658793}
   - component: {fileID: 8303064621599415628}
   - component: {fileID: 1554447641735899800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ak47(VR)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 3
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -613,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6259951857012530616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrabOffsetSecondary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
