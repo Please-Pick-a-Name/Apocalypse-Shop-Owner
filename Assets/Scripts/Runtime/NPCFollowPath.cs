@@ -12,9 +12,16 @@ public class SimpleFollowPath : MonoBehaviour {
     private float currentSpeed;
     private int currentWaypointIndex = 0;
     public DialogueTree dialogueTree;
-    
     public Animator anim;
-
+    public AudioClip enterStoreSound;
+    private Transform enterWaypoint;
+    private bool hasPlayedStoreSound = false;
+    void Start() {
+        GameObject foundObject = GameObject.Find("EnterWaypoint");
+    if (foundObject != null) {
+        enterWaypoint = foundObject.transform; 
+    }
+    }
     void Update() {
         if (waypoints.Length == 0) {
             anim.SetBool("isWalking", false);
@@ -42,17 +49,23 @@ public class SimpleFollowPath : MonoBehaviour {
             anim.SetBool("isWalking", false);
             return;
         }
+        if (enterWaypoint != null && !hasPlayedStoreSound) {
+            if (Vector3.Distance(transform.position, enterWaypoint.position) < 0.5f) {
+                SoundFXManager.instance.PlaySoundFXClip(enterStoreSound, transform, 0.3f, 0f);
+                hasPlayedStoreSound = true; 
+            }
+        }
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f) {
             currentWaypointIndex = (currentWaypointIndex + moveDir) % waypoints.Length;
-            if (moveDir == 1 & currentWaypointIndex + 1 == waypoints.Length) {
+            if (moveDir == 1 && currentWaypointIndex + 1 == waypoints.Length) {
                 DialogueManager.instance.StartDialogue(dialogueTree.nodes[0]);
                 DialogueManager.instance.relatedNPC.Add(this);
                 talking = true;
                 anim.SetTrigger("Talk");
                 anim.SetBool("isWalking", false);
             }
-            if (moveDir == -1 & currentWaypointIndex == 0) {
+            if (moveDir == -1 && currentWaypointIndex == 0) {
                 Destroy(gameObject);
             }
         }

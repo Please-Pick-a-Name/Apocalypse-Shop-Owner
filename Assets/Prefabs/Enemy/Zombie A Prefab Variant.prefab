@@ -277,6 +277,8 @@ MonoBehaviour:
   hitPoint: 100
   isAlive: 1
   anim: {fileID: 3870416303771696971}
+  growlSound: {fileID: 8300000, guid: 3025f94b70e770643b805fe16e0b1fd2, type: 3}
+  attackSound: {fileID: 8300000, guid: b59e88ca96d1e0d4aaed7ad98874fcfd, type: 3}
   healthColliders:
     keys:
     - {fileID: 915725507117903863}

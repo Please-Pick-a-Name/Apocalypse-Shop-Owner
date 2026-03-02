@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         roundCooldown = 60f / roundsPerMinute;
-        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour {
             if (canFire && !PlayerController.cursorMode){
                 cd = roundCooldown;
                 ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
-                audioSource.PlayOneShot(gunFireSFX);
+                SoundFXManager.instance.PlaySoundFXClip(gunFireSFX, transform, 0.2f, 0f);
                 ammo--;
             } else {
                 // play dry ammo sound here ig

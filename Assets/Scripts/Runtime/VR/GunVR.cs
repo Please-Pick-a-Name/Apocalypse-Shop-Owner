@@ -40,7 +40,6 @@ public class GunVR : MonoBehaviour {
         fireMode = weaponSO.fireMode;
         
         roundCooldown = 60f / roundsPerMinute;
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -65,7 +64,7 @@ public class GunVR : MonoBehaviour {
                 currentMagazine.ammo -= 1;
                 cd = roundCooldown;
                 ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
-                audioSource.PlayOneShot(gunFireSFX);
+                SoundFXManager.instance.PlaySoundFXClip(gunFireSFX, transform, 0.2f, 0f);
                 triggerReleased =  false;
             } else {
                 // play dry ammo sound here ig

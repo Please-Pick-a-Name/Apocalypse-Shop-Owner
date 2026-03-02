@@ -13,6 +13,8 @@ public class ZombieHealth : MonoBehaviour {
     public bool isAlive = true;
 
     public Animator anim;
+    public AudioClip growlSound;
+    public AudioClip attackSound;
     
     [Serializable]
     public struct HealthCollider {
@@ -49,6 +51,7 @@ public class ZombieHealth : MonoBehaviour {
     void Start()
     {
         barricadeHealth = GameObject.FindFirstObjectByType<BarricadeHealth>();
+        StartCoroutine(PlayRandomSound());
     }
     void Update() {
         if (!isAlive) {
@@ -67,6 +70,7 @@ public class ZombieHealth : MonoBehaviour {
                 {
                     attackCooldownTimer = attackCooldown;
                     int attackAnimation = Random.Range(1, 3);
+                    SoundFXManager.instance.PlaySoundFXClip(attackSound, transform, 0.1f, 1f);
                     switch (attackAnimation)
                     {
                         case 1: anim.SetTrigger("Attack1"); break;
@@ -83,6 +87,17 @@ public class ZombieHealth : MonoBehaviour {
         pos += Time.deltaTime * zombieMoveSpeed * dir.normalized;
         pos.y = 0;
         transform.SetPositionAndRotation(pos, Quaternion.LookRotation(dir, Vector3.up));
+    }
+    IEnumerator PlayRandomSound() {
+        while (true) {
+            float delay = Random.Range(3f, 7f);
+            yield return new WaitForSeconds(delay);
+            if (isAlive && growlSound != null) {
+                SoundFXManager.instance.PlaySoundFXClip(growlSound, transform, 0.1f, 1f);
+                yield return new WaitForSeconds(growlSound.length);
+            }
+            
+        }
     }
     public void OnHit(Collider collider, float damage) {
         if (!isAlive) {
@@ -103,6 +118,7 @@ public class ZombieHealth : MonoBehaviour {
     public void OnDeath() {
         CurrencyManager.Instance.AddCurrency(10);
         isAlive = false;
+        StopAllCoroutines();
         int deathAnimation = Random.Range(1, 3);
         switch (deathAnimation) {
             case 1: anim.SetTrigger("Death1"); break;

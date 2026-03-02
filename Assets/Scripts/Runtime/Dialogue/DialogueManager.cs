@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour {
 
     Node curNode;
     Queue<string> sentences = new Queue<string>();
-    AudioSource source;
+    //AudioSource source;
     AudioClip talkingClip;
     private Coroutine sentenseCoroutine;
 
@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour {
         }
         instance = this;
         HideDialogueInstant();
-        source = GetComponent<AudioSource>();
+        //source = GetComponent<AudioSource>();
     }
 
     public void StartDialogue(Node rootNode) {
@@ -204,7 +204,7 @@ public class DialogueManager : MonoBehaviour {
         for (int i = 0; i < letters.Length; i++) {
             sentenceText.text += letters[i];
             if (i % 4 == 0)
-                source.PlayOneShot(talkingClip);
+                SoundFXManager.instance.PlaySoundFXClip(talkingClip, transform, 0.5f, 0f);
             yield return new WaitForSeconds(textSpeed);
         }
     }
@@ -236,7 +236,7 @@ public class DialogueManager : MonoBehaviour {
             StopCoroutine(sentenseCoroutine);
         }
 
-        source.PlayOneShot(panelClose);
+        SoundFXManager.instance.PlaySoundFXClip(panelClose, transform, 0.5f, 0f);
         HideDialogueInstant();
 
         dialogueActive = false;

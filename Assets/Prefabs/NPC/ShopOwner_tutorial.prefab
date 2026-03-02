@@ -380,6 +380,8 @@ MonoBehaviour:
     m_Bits: 128
   dialogueTree: {fileID: 11400000, guid: da374f0c3f82e23449da10d31c6bbdd1, type: 2}
   anim: {fileID: -8232963250701280710}
+  enterStoreSound: {fileID: 8300000, guid: 24d144a7e0e861a438c1c50d52c49590, type: 3}
+  enterStoreWaypoint: {fileID: 0}
 --- !u!136 &8588370935525252434
 CapsuleCollider:
   m_ObjectHideFlags: 0
