@@ -3,12 +3,12 @@ using UnityEngine;
 public class AmmoController : MonoBehaviour
 {
     
-    public int ammo = 30;
+    public int ammo;
     public GameObject bullet;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-        ammo = 30;
+        
     }
     
     public int  getAmmo() {

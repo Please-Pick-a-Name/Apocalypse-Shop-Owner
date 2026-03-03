@@ -501,7 +501,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers:
   - {fileID: 0}
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 1
 --- !u!1 &5922683533835328039
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 4
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
