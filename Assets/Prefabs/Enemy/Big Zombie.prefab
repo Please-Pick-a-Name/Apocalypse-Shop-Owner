@@ -1026,6 +1026,8 @@ MonoBehaviour:
   hitPoint: 250
   isAlive: 1
   anim: {fileID: 1239960702913508452}
+  growlSound: {fileID: 8300000, guid: 3025f94b70e770643b805fe16e0b1fd2, type: 3}
+  attackSound: {fileID: 8300000, guid: b59e88ca96d1e0d4aaed7ad98874fcfd, type: 3}
   healthColliders:
     keys:
     - {fileID: 1873131382562187704}
@@ -1049,7 +1051,7 @@ Animator:
   m_GameObject: {fileID: 4035474644360306826}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 66fe560c63d034d40a4bf97db1ea027f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 6c6ccb065652e3e429d1a85aefa93837, type: 2}
+  m_Controller: {fileID: 9100000, guid: 012f7366bffa98746b266a88a19f4a0b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

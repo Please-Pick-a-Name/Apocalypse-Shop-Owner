@@ -60769,9 +60769,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hordeGroup: {fileID: 467357534}
   pathGroup: {fileID: 1036187319}
+  enemyList:
+  - {fileID: 3367049300508886535, guid: cb4ca72b993bc9943bf3fa4f580cb0ef, type: 3}
+  - {fileID: 4035474644360306826, guid: 5d7c4b62bbc80b2408ffa71ba4f4cd7a, type: 3}
   prefabToSpawn: {fileID: 3367049300508886535, guid: cb4ca72b993bc9943bf3fa4f580cb0ef, type: 3}
   spawnInterval: 20
   spawnCount: 1
+  escalationLevel: 1
+  escalationInterval: 120
+  escalationTimer: 0
+  enemiesUnlocked: 1
   paths:
   - {fileID: 928878679}
   - {fileID: 1744032089}
