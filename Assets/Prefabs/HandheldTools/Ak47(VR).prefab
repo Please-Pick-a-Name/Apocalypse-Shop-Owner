@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 5615117298820907670}
   - component: {fileID: 1694461131067337641}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: MagazineController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

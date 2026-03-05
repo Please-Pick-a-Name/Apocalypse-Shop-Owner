@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/Zombie G.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/Zombie G.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/materials/Zombie A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/materials/Zombie A.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/supermarket mesh,texture/materals/bin 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/supermarket mesh,texture/materals/bin 1.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Ak47(VR).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Ak47(VR).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Ak47_Magazine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Ak47_Magazine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Pistol.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/shotgun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/shotgun.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VRGunTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VRGunTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/VR/AmmoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/VR/AmmoController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
