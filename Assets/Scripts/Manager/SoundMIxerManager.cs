@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SoundMIxerManager : MonoBehaviour
+public class SoundMixerManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
     public void setMasterVolume(float level) {
