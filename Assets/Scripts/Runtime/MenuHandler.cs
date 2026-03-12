@@ -1,18 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuHandler : MonoBehaviour
-{
+public class MenuHandler : MonoBehaviour {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    void Start() {
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
+    }
+
+    public void MenuStartMenu() {
+        SceneManager.LoadScene(0); // this is the MainMenu
     }
 
     public void MenuStartGame() {
