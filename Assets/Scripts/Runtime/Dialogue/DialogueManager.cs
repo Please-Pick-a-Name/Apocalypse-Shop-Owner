@@ -111,37 +111,6 @@ public class DialogueManager : MonoBehaviour {
             return;
         }
 
-        if (curNode is DialogueNPCSpawnNode npcNode) {
-            InvokeAction(() => NPCSpawner.instance.SpawnNPC(npcNode.npcToSpawn), npcNode.delay);
-
-            NodePort port = npcNode.GetOutputPort("nextNode");
-            if (port == null || !port.IsConnected) {
-                EndDialogue();
-                return;
-            }
-
-            ProcessNode(port.Connection.node);
-            return;
-        }
-
-        if (curNode is DialogueMoneyNode moneyNode) {
-            var amount = moneyNode.amountToAdd;
-            if (amount < 0) {
-                CurrencyManager.Instance.RemoveCurrency(-moneyNode.amountToAdd);
-            } else {
-                CurrencyManager.Instance.AddCurrency(moneyNode.amountToAdd);
-            }
-
-            NodePort port = moneyNode.GetOutputPort("nextNode");
-            if (port == null || !port.IsConnected) {
-                EndDialogue();
-                return;
-            }
-
-            ProcessNode(port.Connection.node);
-            return;
-        }
-
         if (curNode is DialogueControlNode control) {
             switch (control.dialogueControl) {
                 case DialogueControlNode.option.endDialogue:
@@ -158,6 +127,31 @@ public class DialogueManager : MonoBehaviour {
             }
             return;
         }
+
+        // node type below are stright passthrough
+        if (curNode is DialogueNPCSpawnNode npcNode) {
+            InvokeAction(() => NPCSpawner.instance.SpawnNPC(npcNode.npcToSpawn), npcNode.delay);
+        }else if (curNode is DialogueMoneyNode moneyNode) {
+            var amount = moneyNode.amountToAdd;
+            if (amount < 0) {
+                CurrencyManager.Instance.RemoveCurrency(-moneyNode.amountToAdd);
+            } else {
+                CurrencyManager.Instance.AddCurrency(moneyNode.amountToAdd);
+            }
+        }else if (curNode is DialogueZombieNode zombieNode) {
+            if(zombieNode.spawnInterval >= 0)   ZombieSpawner.instance.spawnInterval   = zombieNode.spawnInterval;
+            if(zombieNode.spawnCount >= 0)      ZombieSpawner.instance.spawnCount      = zombieNode.spawnCount;
+            if(zombieNode.enemiesUnlocked >= 0) ZombieSpawner.instance.enemiesUnlocked = zombieNode.enemiesUnlocked;
+        }
+
+        NodePort port = curNode.GetOutputPort("nextNode");
+        if (port == null || !port.IsConnected) {
+            EndDialogue();
+            return;
+        }
+
+        ProcessNode(port.Connection.node);
+        return;
     }
 
     public void DisplayNextOption(string option) {

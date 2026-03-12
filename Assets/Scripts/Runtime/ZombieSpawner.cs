@@ -3,7 +3,7 @@ using UnityEngine;
 using Random = Unity.Mathematics.Random;
 
 public class ZombieSpawner : MonoBehaviour {
-    BoxCollider areaToSpawn;
+    public static ZombieSpawner instance;
     public GameObject hordeGroup;
     public GameObject pathGroup;
     public GameObject[] enemyList;
@@ -11,7 +11,7 @@ public class ZombieSpawner : MonoBehaviour {
     public float spawnInterval = 5f;
     public int spawnCount = 1;
     public int escalationLevel = 1; //higher escalationLevel lowers spawnInterval and adds new enemy types
-    public float escalationInterval = 120f;  //Interval that escalationLevel increases
+    public float escalationInterval = 120;  //Interval that escalationLevel increases
     public float escalationTimer;
     public int enemiesUnlocked = 1;
     
@@ -22,25 +22,31 @@ public class ZombieSpawner : MonoBehaviour {
     [Header("debug")]
     public float cd = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake() {
+        if (instance != null && instance != this) {
+            Destroy(gameObject);
+        } else {
+            instance = this;
+        }
+    }
     void OnValidate() {
         paths = pathGroup.GetComponentsInChildren<LineRenderer>();
         pathCount = paths.Length;
     }
     void Start() {
-        areaToSpawn = GetComponent<BoxCollider>();
-        escalationTimer = escalationInterval;
+        //escalationTimer = escalationInterval;
     }
 
     // Update is called once per frame
     void Update() {
-        if (escalationTimer <= 0) {
+        /* if (escalationTimer <= 0) {
             escalationLevel++;//increase difficulty
             spawnInterval *= 0.9f; // lower spawn interval
             if (escalationLevel % 5 == 0 && enemiesUnlocked < enemyList.Length) {//unlock new enemy type every 5 difficulty escalations
                         enemiesUnlocked++;
             }
             escalationTimer += escalationInterval;
-        }
+        } */
         
         
         if (cd <= 0) {
@@ -54,7 +60,7 @@ public class ZombieSpawner : MonoBehaviour {
             cd += spawnInterval;
         }
         cd -= Time.deltaTime;
-        escalationTimer -= Time.deltaTime;
+        //escalationTimer -= Time.deltaTime;
         
     }
 
