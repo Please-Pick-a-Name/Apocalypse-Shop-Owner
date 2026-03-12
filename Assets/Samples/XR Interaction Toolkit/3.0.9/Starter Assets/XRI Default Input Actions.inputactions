@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "XRI Default Input Actions",
     "maps": [
         {
@@ -349,7 +350,7 @@
                     "name": "Is Tracked",
                     "type": "Button",
                     "id": "82eb6741-beef-48d3-83ab-a957dc1caa1e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1523,6 +1524,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "GunAction",
+                    "type": "Button",
+                    "id": "209643f3-f397-4cee-af6c-9351f3396a1c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1930,6 +1940,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Thumbstick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36556c50-dc9b-48b2-862c-d5729d31a82e",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GunAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -2354,7 +2375,7 @@
                     "name": "Teleport Mode Cancel",
                     "type": "Button",
                     "id": "d587b60c-39a0-4365-8075-477ce484ba0f",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -2390,7 +2411,7 @@
                     "name": "Grab Move",
                     "type": "Button",
                     "id": "cfb29d37-3db0-4e5d-a73b-7d48a19e279e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
