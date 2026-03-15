@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.9/Starter Assets/XRI Default Input Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.9/Starter Assets/XRI Default Input Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VRGunTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VRGunTest.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +17,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/VR/BulletController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/VR/ShotgunBulletController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7652a5c7e246/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@9774edd5e6a4/Editor/BaseInteractionEditor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -120,7 +120,8 @@
       <workItem from="1771801546705" duration="4548000" />
       <workItem from="1772485137334" duration="2075000" />
       <workItem from="1773251010698" duration="2000" />
-      <workItem from="1773252936630" duration="7019000" />
+      <workItem from="1773252936630" duration="8002000" />
+      <workItem from="1773527907525" duration="3806000" />
     </task>
     <servers />
   </component>
