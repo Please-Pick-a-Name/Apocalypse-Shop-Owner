@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6736693660688077070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a9c21b70cb1a448918862bd6025e21, type: 3}
+  m_Name: Simple Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -40, y: -104}
+  ports:
+    keys:
+    - prevNode
+    - nextNode
+    values:
+    - _fieldName: prevNode
+      _node: {fileID: -6736693660688077070}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: optionA
+        node: {fileID: -5957421268780075007}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextNode
+      _node: {fileID: -6736693660688077070}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  sentence: {fileID: 11400000, guid: 1843c6bbc2f4f1d458485088f93cd1b9, type: 2}
+  prevNode: {fileID: 0}
+  nextNode: {fileID: 0}
+--- !u!114 &-5957421268780075007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364cd6da4a1f0614db391e2d45e3ac3e, type: 3}
+  m_Name: Option Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -367, y: -35.5}
+  ports:
+    keys:
+    - prevNode
+    - optionA
+    - optionB
+    values:
+    - _fieldName: prevNode
+      _node: {fileID: -5957421268780075007}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: optionA
+      _node: {fileID: -5957421268780075007}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: -6736693660688077070}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: optionB
+      _node: {fileID: -5957421268780075007}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 990867270480364093}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  speaker: {fileID: 11400000, guid: 7576b40ee493d2e4099ffc9cadd46d96, type: 2}
+  responses: {fileID: 11400000, guid: 7492f1f7c0c873f488eb9fdfdd912343, type: 2}
+  prevNode: {fileID: 0}
+  optionA: {fileID: 0}
+  optionB: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7793c6a5fcbd50c4cb0ecab6dc6aedcb, type: 3}
+  m_Name: citizen3_dt
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -5957421268780075007}
+  - {fileID: -6736693660688077070}
+  - {fileID: 990867270480364093}
+  - {fileID: 4550815670686460330}
+  - {fileID: 8224636975533502140}
+--- !u!114 &990867270480364093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a9c21b70cb1a448918862bd6025e21, type: 3}
+  m_Name: Simple Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -24, y: 72}
+  ports:
+    keys:
+    - prevNode
+    - nextNode
+    values:
+    - _fieldName: prevNode
+      _node: {fileID: 990867270480364093}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: optionB
+        node: {fileID: -5957421268780075007}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextNode
+      _node: {fileID: 990867270480364093}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 8224636975533502140}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  sentence: {fileID: 11400000, guid: aa3e0c54690b286438472a7622db992f, type: 2}
+  prevNode: {fileID: 0}
+  nextNode: {fileID: 0}
+--- !u!114 &4550815670686460330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1555394346bb35248a7971acc87a00a4, type: 3}
+  m_Name: Dialogue Money
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 232, y: -88}
+  ports:
+    keys:
+    - prevNode
+    - nextNode
+    values:
+    - _fieldName: prevNode
+      _node: {fileID: 4550815670686460330}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextNode
+      _node: {fileID: 4550815670686460330}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 8224636975533502140}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  amountToAdd: 20
+  prevNode: {fileID: 0}
+  nextNode: {fileID: 0}
+--- !u!114 &8224636975533502140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee761853634e270489202ec9035cbef8, type: 3}
+  m_Name: Dialogue Control
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 533, y: -28.5}
+  ports:
+    keys:
+    - prevNode
+    values:
+    - _fieldName: prevNode
+      _node: {fileID: 8224636975533502140}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: nextNode
+        node: {fileID: 990867270480364093}
+        reroutePoints: []
+      - fieldName: nextNode
+        node: {fileID: 4550815670686460330}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  dialogueControl: 0
+  prevNode: {fileID: 0}
