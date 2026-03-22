@@ -19,6 +19,9 @@ MonoBehaviour:
     - prevNode
     - optionA
     - optionB
+    - options
+    - options 0
+    - options 1
     values:
     - _fieldName: prevNode
       _node: {fileID: -3159093176860279776}
@@ -50,11 +53,45 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: options
+      _node: {fileID: -3159093176860279776}
+      _typeQualifiedName: XNode.Node[], XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: options 0
+      _node: {fileID: -3159093176860279776}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 8427552585606625479}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: options 1
+      _node: {fileID: -3159093176860279776}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 4533604072745685038}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   speaker: {fileID: 11400000, guid: 5af02078e8096774b9e684b5b01e9195, type: 2}
   responses: {fileID: 11400000, guid: f31cb1928473e3443a9c35edeeef9bc9, type: 2}
   prevNode: {fileID: 0}
   optionA: {fileID: 0}
   optionB: {fileID: 0}
+  options:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +190,18 @@ MonoBehaviour:
       - fieldName: optionB
         node: {fileID: 4533604072745685038}
         reroutePoints: []
+      - fieldName: options 0
+        node: {fileID: 8427552585606625479}
+        reroutePoints: []
+      - fieldName: options 1
+        node: {fileID: 8427552585606625479}
+        reroutePoints: []
+      - fieldName: options 0
+        node: {fileID: 4533604072745685038}
+        reroutePoints: []
+      - fieldName: options 1
+        node: {fileID: 4533604072745685038}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -184,18 +233,24 @@ MonoBehaviour:
   m_Name: Option Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -152, y: -24}
+  position: {x: -136, y: 40}
   ports:
     keys:
     - prevNode
     - optionA
     - optionB
+    - options
+    - options 0
+    - options 1
     values:
     - _fieldName: prevNode
       _node: {fileID: 4533604072745685038}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: optionB
+        node: {fileID: -3159093176860279776}
+        reroutePoints: []
+      - fieldName: options 1
         node: {fileID: -3159093176860279776}
         reroutePoints: []
       _direction: 0
@@ -224,11 +279,45 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: options
+      _node: {fileID: 4533604072745685038}
+      _typeQualifiedName: XNode.Node[], XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: options 0
+      _node: {fileID: 4533604072745685038}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 2389498767668304550}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: options 1
+      _node: {fileID: 4533604072745685038}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 2389498767668304550}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   speaker: {fileID: 11400000, guid: 5fdbb2e2ca1558a41a13bc95b5f2d832, type: 2}
   responses: {fileID: 11400000, guid: 7c81b42788e120b4899f19711d01f59b, type: 2}
   prevNode: {fileID: 0}
   optionA: {fileID: 0}
   optionB: {fileID: 0}
+  options:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &8427552585606625479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,12 +337,18 @@ MonoBehaviour:
     - prevNode
     - optionA
     - optionB
+    - options
+    - options 0
+    - options 1
     values:
     - _fieldName: prevNode
       _node: {fileID: 8427552585606625479}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: optionA
+        node: {fileID: -3159093176860279776}
+        reroutePoints: []
+      - fieldName: options 0
         node: {fileID: -3159093176860279776}
         reroutePoints: []
       _direction: 0
@@ -282,11 +377,45 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: options
+      _node: {fileID: 8427552585606625479}
+      _typeQualifiedName: XNode.Node[], XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: options 0
+      _node: {fileID: 8427552585606625479}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 2389498767668304550}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: options 1
+      _node: {fileID: 8427552585606625479}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 2389498767668304550}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   speaker: {fileID: 11400000, guid: 192ff218257973c4dac87bbf3c64fd76, type: 2}
   responses: {fileID: 11400000, guid: 7c81b42788e120b4899f19711d01f59b, type: 2}
   prevNode: {fileID: 0}
   optionA: {fileID: 0}
   optionB: {fileID: 0}
+  options:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &8516702388271990740
 MonoBehaviour:
   m_ObjectHideFlags: 0

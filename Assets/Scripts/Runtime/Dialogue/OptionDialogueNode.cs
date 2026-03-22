@@ -10,6 +10,7 @@ public class OptionDialogueNode : Node
 	
 	[Input] public Node prevNode;
 	
-	[Output] public Node optionA;
-	[Output] public Node optionB;
+	[Output(dynamicPortList = true)] public Dialogue[] options;
+
+	public string[] optionsRequireItems;
 }

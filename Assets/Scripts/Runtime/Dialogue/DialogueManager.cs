@@ -7,13 +7,27 @@ using TMPro;
 using DG.Tweening;
 using XNode;
 
+[RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(AudioSource))]
 public class DialogueManager : MonoBehaviour {
     public static DialogueManager instance;
+    public List<DialogueItem> dialogueItemsInTrigger;
+
+    public enum SpawnLocation{
+        BARRICADE_TABLE,
+        COUNTER_TOP,
+        BACK_TABLE
+    }
+    public Transform barricadeTableTransform;
+    public Transform counterTopTransform;
+    public Transform backTableTransform;
+
+
     public TMP_Text nameText;
     public TMP_Text sentenceText;
-    public Button nextButton, optionAButton, optionBButton;
-    public TMP_Text optionAText, optionBText;
+    public Button nextButton;
+    public Button[] optionButtons;
+    public TMP_Text[] optionTexts;
     public Image portrait;
     public AudioClip panelOpen, panelClose;
     [Space]
@@ -26,7 +40,7 @@ public class DialogueManager : MonoBehaviour {
     public GameObject dialogueBox;
     public CanvasGroup dialogueGroup;
 
-    Node curNode;
+    public Node curNode;
     Queue<string> sentences = new Queue<string>();
     //AudioSource source;
     AudioClip talkingClip;
@@ -36,6 +50,26 @@ public class DialogueManager : MonoBehaviour {
 
     public bool dialogueActive { get; private set; }
 
+    void OnTriggerEnter(Collider other) {
+        var dialogueItem = other.GetComponentInParent<DialogueItem>();
+        if (dialogueItem == null) {
+            return;
+        }
+        dialogueItemsInTrigger.Add(dialogueItem);
+
+    }
+
+    void OnTriggerExit(Collider other) {
+        var dialogueItem = other.GetComponentInParent<DialogueItem>();
+        if (dialogueItem == null) {
+            return;
+        }
+        dialogueItemsInTrigger.Remove(dialogueItem);
+    }
+
+    void OnValidate() {
+    }
+
     void Start() {
         if (instance != null & instance != this) {
             return;
@@ -43,6 +77,31 @@ public class DialogueManager : MonoBehaviour {
         instance = this;
         HideDialogueInstant();
         //source = GetComponent<AudioSource>();
+    }
+
+    void Update() {
+        if (curNode is OptionDialogueNode options) {
+            for (int i = 0; i < options.optionsRequireItems.Length; i++) {
+                var requiredItemID = options.optionsRequireItems[i];
+                if (requiredItemID == ""){ // nothing is wanted, keep interactable as true
+                    optionButtons[i].interactable = true;
+                    continue;
+                }
+
+                // optionButtons[i].interactable = false; // make button look weird
+                bool markDisable = true;
+                foreach (var dialogueItem in dialogueItemsInTrigger){
+                    if (dialogueItem.itemID == requiredItemID){
+                        optionButtons[i].interactable = true;
+                        markDisable = false;
+                        break;
+                    }
+                }
+                if (markDisable) {
+                    optionButtons[i].interactable = false;
+                }
+            }
+        }
     }
 
     public void StartDialogue(Node rootNode) {
@@ -77,15 +136,18 @@ public class DialogueManager : MonoBehaviour {
             sentenceText.text = "";
 
             nextButton.gameObject.SetActive(false);
-            optionAButton.gameObject.SetActive(true);
-            optionBButton.gameObject.SetActive(true);
-
-            optionAText.text = options.responses.sentences[0];
-            optionBText.text = options.responses.sentences[1];
+            for (int i = 0; i < options.options.Length; i++) {
+                optionButtons[i].gameObject.SetActive(true);
+                optionTexts[i].text = options.responses.sentences[i];
+            }
+            for (int i = options.options.Length; i < 4; i++) {
+                optionButtons[i].gameObject.SetActive(false);
+            }
 
             sentences.Clear();
-            foreach (var s in dialogue.sentences)
-                sentences.Enqueue(s);
+            for (int i = 0; i < dialogue.sentences.Length; i++) {
+                sentences.Enqueue(dialogue.sentences[i]);
+            }
 
             DisplaySentence();
             return;
@@ -100,8 +162,9 @@ public class DialogueManager : MonoBehaviour {
             sentenceText.text = "";
 
             nextButton.gameObject.SetActive(true);
-            optionAButton.gameObject.SetActive(false);
-            optionBButton.gameObject.SetActive(false);
+            for (int i = 0; i < 4; i++) {
+                optionButtons[i].gameObject.SetActive(false);
+            }
 
             sentences.Clear();
             foreach (var s in dialogue.sentences)
@@ -131,6 +194,20 @@ public class DialogueManager : MonoBehaviour {
         // node type below are stright passthrough
         if (curNode is DialogueNPCSpawnNode npcNode) {
             InvokeAction(() => NPCSpawner.instance.SpawnNPC(npcNode.npcToSpawn), npcNode.delay);
+        }else if (curNode is DialogueItemSpawnNode spawnNode) {
+            switch (spawnNode.spawnLocation) {
+                case SpawnLocation.BARRICADE_TABLE:
+                    InvokeAction(() => Instantiate(spawnNode.gameObjectToSpawn, barricadeTableTransform.position, Quaternion.identity), spawnNode.delay);
+                    break;
+                case SpawnLocation.COUNTER_TOP:
+                    InvokeAction(() => Instantiate(spawnNode.gameObjectToSpawn, counterTopTransform.position, Quaternion.identity), spawnNode.delay);
+                    break;
+                case SpawnLocation.BACK_TABLE:
+                    InvokeAction(() => Instantiate(spawnNode.gameObjectToSpawn, backTableTransform.position, Quaternion.identity), spawnNode.delay);
+                    break;
+                default:
+                    break;
+            }
         }else if (curNode is DialogueMoneyNode moneyNode) {
             var amount = moneyNode.amountToAdd;
             if (amount < 0) {
@@ -154,25 +231,30 @@ public class DialogueManager : MonoBehaviour {
         return;
     }
 
-    public void DisplayNextOption(string option) {
-        if (!(curNode is OptionDialogueNode optionNode)) {
-            Debug.LogError("Option button clicked, but current node is NOT an OptionDialogueNode!");
+    public void DisplayNextOption(int option) {
+        if (curNode is not OptionDialogueNode optionNode)
             return;
+
+        if (option < optionNode.optionsRequireItems.Length) {
+            var requiredItemID = optionNode.optionsRequireItems[option];
+            if (requiredItemID != ""){
+                foreach (var dialogueItem in dialogueItemsInTrigger){
+                    if (dialogueItem.itemID == requiredItemID){
+                        Destroy(dialogueItem.gameObject);
+                        break;
+                    }
+                }
+            }
         }
 
-        NodePort port = option == "A" ? optionNode.GetOutputPort("optionA") : optionNode.GetOutputPort("optionB");
-
-        if (port == null || port.Connection == null) {
-            Debug.LogError("Option port not connected");
-            return;
+        NodePort nextPort = optionNode.GetOutputPort($"options {option}").Connection;
+        if (nextPort != null) {
+            ProcessNode(nextPort.node);
         }
-
-        ProcessNode(port.Connection.node);
     }
 
-
     public void DisplayNextSimple() {
-        if (!(curNode is SimpleDialogueNode simpleNode))
+        if (curNode is not SimpleDialogueNode simpleNode)
             return;
 
         NodePort port = simpleNode.GetOutputPort("nextNode");
