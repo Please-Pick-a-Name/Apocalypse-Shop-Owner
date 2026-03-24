@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9157496554586346397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364cd6da4a1f0614db391e2d45e3ac3e, type: 3}
+  m_Name: Option Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 259, y: -103.5}
+  ports:
+    keys:
+    - prevNode
+    - options
+    - options 0
+    values:
+    - _fieldName: prevNode
+      _node: {fileID: -9157496554586346397}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: nextNode
+        node: {fileID: -367270321938012}
+        reroutePoints: []
+      - fieldName: nextNode
+        node: {fileID: 8030917696662376117}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: options
+      _node: {fileID: -9157496554586346397}
+      _typeQualifiedName: Dialogue[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: options 0
+      _node: {fileID: -9157496554586346397}
+      _typeQualifiedName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: 4326765061734759199}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  speaker: {fileID: 11400000, guid: 23b045aefcae0284f955ee8abe356c0c, type: 2}
+  responses: {fileID: 11400000, guid: f277ae605cc644345ad1af04b24bccda, type: 2}
+  prevNode: {fileID: 0}
+  options:
+  - {fileID: 0}
+  optionsRequireItems:
+  - smokepacket
+  - smokepacket
 --- !u!114 &-8933530685577901987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,7 +76,7 @@ MonoBehaviour:
   m_Name: Dialogue NPC Spawn
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 712, y: -120}
+  position: {x: 792, y: -120}
   ports:
     keys:
     - prevNode
@@ -58,7 +121,7 @@ MonoBehaviour:
   m_Name: Dialogue Control
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 984, y: -72}
+  position: {x: 1032, y: -72}
   ports:
     keys:
     - prevNode
@@ -76,53 +139,6 @@ MonoBehaviour:
       _dynamic: 0
   dialogueControl: 0
   prevNode: {fileID: 0}
---- !u!114 &-6261843055269484027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a9c21b70cb1a448918862bd6025e21, type: 3}
-  m_Name: Simple Dialogue
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 200, y: -120}
-  ports:
-    keys:
-    - prevNode
-    - nextNode
-    values:
-    - _fieldName: prevNode
-      _node: {fileID: -6261843055269484027}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: nextNode
-        node: {fileID: 8030917696662376117}
-        reroutePoints: []
-      - fieldName: nextNode
-        node: {fileID: -367270321938012}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: nextNode
-      _node: {fileID: -6261843055269484027}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: prevNode
-        node: {fileID: 4326765061734759199}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  sentence: {fileID: 11400000, guid: 23b045aefcae0284f955ee8abe356c0c, type: 2}
-  prevNode: {fileID: 0}
-  nextNode: {fileID: 0}
 --- !u!114 &-367270321938012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +171,7 @@ MonoBehaviour:
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: prevNode
-        node: {fileID: -6261843055269484027}
+        node: {fileID: -9157496554586346397}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -180,10 +196,10 @@ MonoBehaviour:
   - {fileID: 3773262972418962858}
   - {fileID: 8030917696662376117}
   - {fileID: -367270321938012}
-  - {fileID: -6261843055269484027}
   - {fileID: 4326765061734759199}
   - {fileID: -7939240152089869875}
   - {fileID: -8933530685577901987}
+  - {fileID: -9157496554586346397}
 --- !u!114 &3773262972418962858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +279,7 @@ MonoBehaviour:
   m_Name: Dialogue Money
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 472, y: -120}
+  position: {x: 504, y: -40}
   ports:
     keys:
     - prevNode
@@ -273,8 +289,8 @@ MonoBehaviour:
       _node: {fileID: 4326765061734759199}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: nextNode
-        node: {fileID: -6261843055269484027}
+      - fieldName: options 0
+        node: {fileID: -9157496554586346397}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -291,7 +307,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  amountToAdd: 50
+  amountToAdd: 100
   prevNode: {fileID: 0}
   nextNode: {fileID: 0}
 --- !u!114 &8030917696662376117
@@ -329,7 +345,7 @@ MonoBehaviour:
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: prevNode
-        node: {fileID: -6261843055269484027}
+        node: {fileID: -9157496554586346397}
         reroutePoints: []
       _direction: 1
       _connectionType: 0

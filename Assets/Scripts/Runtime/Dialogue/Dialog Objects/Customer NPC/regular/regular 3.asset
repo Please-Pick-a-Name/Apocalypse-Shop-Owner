@@ -16,4 +16,4 @@ MonoBehaviour:
   portrait: {fileID: 0}
   talkingClip: {fileID: 8300000, guid: f6c857dbc4602471a97d0b3a0e1e03f3, type: 3}
   sentences:
-  - "Anyway, I\u2019ll be getting these smoke packets. See ya around."
+  - 'Anyway, gimme some smoke packets. '
