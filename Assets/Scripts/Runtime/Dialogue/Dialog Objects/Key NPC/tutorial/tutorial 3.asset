@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: tutorial 3
   m_EditorClassIdentifier: 
   name: Shop Manager
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 7a53856b0eee7364abd6e3d58da5fed5, type: 3}
   talkingClip: {fileID: 8300000, guid: f6c857dbc4602471a97d0b3a0e1e03f3, type: 3}
   sentences:
   - "Your job is simple: serve the customers. Make \u2018em happy and you will see

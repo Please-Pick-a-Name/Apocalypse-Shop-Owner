@@ -16,5 +16,5 @@ MonoBehaviour:
   portrait: {fileID: 0}
   talkingClip: {fileID: 8300000, guid: f6c857dbc4602471a97d0b3a0e1e03f3, type: 3}
   sentences:
-  - 'Don''t tempt me! If I spend all my scrap on cakes, I won''t have enough for
-    ammo... but then again, you can''t eat bullets. Give me three of ''em. '
+  - Don't tempt me! If I spend all my scrap on cakes, I won't have enough for ammo...
+    but then again, you can't eat bullets. Give em to me.

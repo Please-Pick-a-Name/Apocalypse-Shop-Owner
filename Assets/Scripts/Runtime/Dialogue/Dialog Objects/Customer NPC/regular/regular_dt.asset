@@ -62,7 +62,6 @@ MonoBehaviour:
   - {fileID: 0}
   optionsRequireItems:
   - smokepacket
-  - smokepacket
 --- !u!114 &-8933530685577901987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +160,10 @@ MonoBehaviour:
     - _fieldName: prevNode
       _node: {fileID: -367270321938012}
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: options 1
+        node: {fileID: 3773262972418962858}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -254,7 +256,10 @@ MonoBehaviour:
       _node: {fileID: 3773262972418962858}
       _typeQualifiedName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: prevNode
+        node: {fileID: -367270321938012}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
