@@ -23,7 +23,10 @@ MonoBehaviour:
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: nextNode
-        node: {fileID: 1258640493476586088}
+        node: {fileID: 5860244231912424799}
+        reroutePoints: []
+      - fieldName: nextNode
+        node: {fileID: 507158421990093039}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -72,7 +75,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  gameObjectToSpawn: {fileID: 889714198083233159, guid: bccc6fc3eb8184540947b4fdc4c5a86a, type: 3}
+  gameObjectToSpawn: {fileID: 4157369467461240557, guid: 3f3fa3a08ee07a24ba079a85817afc8b, type: 3}
   delay: 0
   spawnLocation: 1
   prevNode: {fileID: 0}
@@ -97,7 +100,6 @@ MonoBehaviour:
   - {fileID: 7786629861292763716}
   - {fileID: -602041199699536892}
   - {fileID: -123813718279104471}
-  - {fileID: 1258640493476586088}
 --- !u!114 &507158421990093039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,61 +135,13 @@ MonoBehaviour:
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: prevNode
-        node: {fileID: 1258640493476586088}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  sentence: {fileID: 11400000, guid: dd1dd51638d7d734fb2855decb81bbf6, type: 2}
-  prevNode: {fileID: 0}
-  nextNode: {fileID: 0}
---- !u!114 &1258640493476586088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a4492942ad8d24ca1ec121df0033bb, type: 3}
-  m_Name: Dialogue NPC Spawn
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 792, y: -24}
-  ports:
-    keys:
-    - prevNode
-    - nextNode
-    values:
-    - _fieldName: prevNode
-      _node: {fileID: 1258640493476586088}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: nextNode
-        node: {fileID: 5860244231912424799}
-        reroutePoints: []
-      - fieldName: nextNode
-        node: {fileID: 507158421990093039}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: nextNode
-      _node: {fileID: 1258640493476586088}
-      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: prevNode
         node: {fileID: -602041199699536892}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  npcToSpawn: {fileID: 4542491388814078785, guid: 4cf787d95ef42cc4aa84d55bd4bb5d2e, type: 3}
-  delay: 5
+  sentence: {fileID: 11400000, guid: dd1dd51638d7d734fb2855decb81bbf6, type: 2}
   prevNode: {fileID: 0}
   nextNode: {fileID: 0}
 --- !u!114 &3902875032611734288
@@ -338,7 +292,7 @@ MonoBehaviour:
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: prevNode
-        node: {fileID: 1258640493476586088}
+        node: {fileID: -602041199699536892}
         reroutePoints: []
       _direction: 1
       _connectionType: 0

@@ -13980,7 +13980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcbe433aa5c49f4a88109ece25a0405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 8655c89ab5b189342b777e6cbec1045b, type: 2}
 --- !u!225 &803922177
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26168,11 +26168,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6621ed3ab0221546a5391ed3cef3200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manualSpawn: 1
-  npcPrefab: {fileID: 5312354865832678996, guid: 868cc6d3cabe07a45afacbcb1e4cd60e, type: 3}
-  introNpcPrefab: {fileID: 4542491388814078785, guid: d2f39ebeeed8c7a4da6e2309cbe898ad, type: 3}
+  spawnInterval: 10
   spawnPoint: {fileID: 1562932636}
-  cd: 0
+  regularNpcPrefabs:
+  - {fileID: 5470932405022291167, guid: 3c8dffe712b07ba45b3eca8108ecc437, type: 3}
+  - {fileID: 7686988053164636663, guid: ce89117cd909e2d459ecf170fadaca63, type: 3}
+  - {fileID: 3744909331137813474, guid: 34113d83ebd93f0469bf67d3143eeb6c, type: 3}
+  - {fileID: 2198910054559536653, guid: 71a6acb5ce2f38e409a38d20b1145019, type: 3}
+  - {fileID: 5536148809851176622, guid: e56d6dd454cd9cc49a711a9facbab3b2, type: 3}
+  - {fileID: 5187819457464684346, guid: bf401023a45020540ad42df3861784be, type: 3}
+  - {fileID: 6825798282671632588, guid: e54f675e70ed965468e8c75aed38cb32, type: 3}
+  - {fileID: 3125277117934926077, guid: 71d85ab4d4b189e4789ae9d80f1a22f9, type: 3}
+  - {fileID: 1946513285675811527, guid: 1bc5003aa768f414abc812eada139ba4, type: 3}
+  - {fileID: 4732424743247394496, guid: d44cd44e39166fc4ab62f01247f9a8e7, type: 3}
+  - {fileID: 2198910054559536653, guid: 83297eb4ea03338468e4e4c4e6d394a0, type: 3}
+  - {fileID: 1733603467172742654, guid: d9ce69f726e3c894e84acd736e25ce39, type: 3}
+  - {fileID: 2198910054559536653, guid: 83297eb4ea03338468e4e4c4e6d394a0, type: 3}
+  - {fileID: 8287191449904280047, guid: e2cc7458bcbd03842baa6a93fad0300d, type: 3}
+  - {fileID: 2375324469863431723, guid: 81a6342325fe7ba48bfaf5cc7c7d2461, type: 3}
+  - {fileID: 5536148809851176622, guid: 666e66e2574427d49a6a87ec4ba58bd9, type: 3}
+  keyNpcPrefabs:
+  - {fileID: 4542491388814078785, guid: d2f39ebeeed8c7a4da6e2309cbe898ad, type: 3}
+  - {fileID: 3300053700772429560, guid: 3e0e07611780d5a4f8cf517c6a486745, type: 3}
+  - {fileID: 1750533858711585670, guid: 05efe753e7be7b747b15f3a028528bfa, type: 3}
+  - {fileID: 1431239876063133858, guid: 46a6333ffc13812428dbc13ef550f7f3, type: 3}
+  - {fileID: 4347685641152609636, guid: d322c8b02c42f8b4e8880cfd9b8ee8bf, type: 3}
+  - {fileID: 4347685641152609636, guid: afd1113a257435e4c951ffdc6cfc9d57, type: 3}
+  - {fileID: 4891908989058935395, guid: 501d4105bcacf574b9b151c055e1f569, type: 3}
+  - {fileID: 4891908989058935395, guid: f4bd08acb889e8a48a580a1b46802f13, type: 3}
   pathPoints:
   - {fileID: 975028092}
   - {fileID: 210725338}

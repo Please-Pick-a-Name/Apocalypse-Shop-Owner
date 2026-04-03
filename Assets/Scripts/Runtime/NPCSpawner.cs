@@ -1,47 +1,84 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCSpawner : MonoBehaviour {
     public static NPCSpawner instance;
+
     [Header("Spawn Settings")]
-    public bool manualSpawn = true;
-    public GameObject npcPrefab;
-    public GameObject introNpcPrefab;
+    public float spawnInterval = 10f;
     public Transform spawnPoint;
-    public float cd;
+    private float timer;
+    
+    [Header("NPC Pools")]
+    public List<GameObject> regularNpcPrefabs;
+    public List<GameObject> keyNpcPrefabs;
     [Header("Path Settings")]
     public Transform[] pathPoints;
 
+    private int regularSpawnCount = 0;
+    private int keyNpcIndex = 0;
+
+    private GameObject currentNPC;
+
     void Awake() {
         if (instance != null & instance != this) {
+            Destroy(this);
             return;
         }
         instance = this;
 
-        if (manualSpawn) {
-            SpawnNPC(introNpcPrefab);
-        }
+        SpawnKeyNPC();
+        regularSpawnCount = 0;
+        timer = spawnInterval;
     }
 
     void Update() {
-        if (manualSpawn) {
-            return;
+        if (currentNPC != null) {
+            return; 
         }
-        if (cd <= 0) {
-            SpawnNPC();
-            cd += 3;
+        timer -= Time.deltaTime;
+        if (timer <= 0) {
+            DetermineAndSpawn();
+            timer = spawnInterval;
         }
-        cd -= Time.deltaTime;
     }
 
-    public void SpawnNPC() {
-        SpawnNPC(npcPrefab);
+    private void DetermineAndSpawn() {
+        if (regularSpawnCount >= 3) {
+            SpawnKeyNPC();
+            regularSpawnCount = 0;
+        } else {
+            SpawnRegularNPC();
+            regularSpawnCount++;
+        }
+    }
+
+    public void SpawnRegularNPC() {
+        if (regularNpcPrefabs.Count == 0) return;
+
+        int randomIndex = Random.Range(0,regularNpcPrefabs.Count);
+        SpawnNPC(regularNpcPrefabs[randomIndex]);
+    }
+
+    public void SpawnKeyNPC() {
+        if(keyNpcPrefabs.Count == 0) return;
+
+        SpawnNPC(keyNpcPrefabs[keyNpcIndex]);
+        if(keyNpcIndex < keyNpcPrefabs.Count) {
+            keyNpcIndex = keyNpcIndex + 1; 
+        }
+        else {
+            Debug.Log("reached the end");
+            // ending 
+        }
+        
     }
 
     public SimpleFollowPath SpawnNPC(GameObject myNpcPrefab) {
         Vector3 position = spawnPoint != null ? spawnPoint.position : transform.position;
-        GameObject spawnedNPC = Instantiate(myNpcPrefab, position, Quaternion.identity);
+        currentNPC = Instantiate(myNpcPrefab, position, Quaternion.identity);
 
-        SimpleFollowPath followScript = spawnedNPC.GetComponentInChildren<SimpleFollowPath>();
+        SimpleFollowPath followScript = currentNPC.GetComponentInChildren<SimpleFollowPath>();
 
         if (followScript != null) {
             followScript.waypoints = pathPoints;
