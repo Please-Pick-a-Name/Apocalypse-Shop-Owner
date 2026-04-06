@@ -18,6 +18,7 @@ public class MenuHandler : MonoBehaviour {
 
     public void MenuStartGame() {
         SceneManager.LoadScene(1); // this is the SampleScene aka the actual game world
+        Time.timeScale = 1f;
     }
 
     public void MenuExitGame() {

@@ -1,3 +1,4 @@
+using System.Security.AccessControl;
 using UnityEngine;
 using UnityEngine.UI;
 public class BarricadeHealth : MonoBehaviour
@@ -5,11 +6,13 @@ public class BarricadeHealth : MonoBehaviour
     public float health = 75f;
     public float maxHealth = 100f;
     [SerializeField] public Slider slider;
+    [SerializeField] private GameObject gameOverPanel;
 
     public GameObject[] visualStates;
     void Start()
     {
         UpdateVisuals();
+        gameOverPanel.SetActive(false);
     }
     void Update()
     {
@@ -21,6 +24,11 @@ public class BarricadeHealth : MonoBehaviour
     {
         health -= damageAmount;
         UpdateVisuals();
+        if (health <= 0f)
+        {
+            health = 0f;
+            GameOver();
+        }
     }
     public void Heal(float healAmount) {
         health = Mathf.Min(maxHealth, health + healAmount);
@@ -49,5 +57,11 @@ public class BarricadeHealth : MonoBehaviour
             }
         }
 
+    }
+
+    void GameOver() {
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
