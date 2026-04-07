@@ -24947,7 +24947,6 @@ MonoBehaviour:
   maxHealth: 100
   slider: {fileID: 475994353}
   gameOverPanel: {fileID: 195014148}
-  playerController: {fileID: 0}
   visualStates:
   - {fileID: 3759952418794776058}
   - {fileID: 7964483626115852203}

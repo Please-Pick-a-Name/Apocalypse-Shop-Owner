@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff91a85d3d53b7142a409b03232ae6cd, type: 3}
       propertyPath: m_Name
-      value: Character_15
+      value: cereal_npc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -150,5 +150,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   dialogueTree: {fileID: 11400000, guid: a681057570ecf8849a21f0a03cfe51c2, type: 2}
-  anim: {fileID: 0}
+  anim: {fileID: 2127302816727065213}
   enterStoreSound: {fileID: 8300000, guid: 24d144a7e0e861a438c1c50d52c49590, type: 3}

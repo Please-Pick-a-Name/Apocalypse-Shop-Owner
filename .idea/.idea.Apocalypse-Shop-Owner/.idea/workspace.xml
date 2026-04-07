@@ -6,8 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/RevolverBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/RevolverBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/GasMask.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/GasMask.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/KeyCard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/KeyCard.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/ResearchLog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/ResearchLog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Antiseptic.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Antiseptic.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Apple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Apple.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Bandage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Bandage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CannedBeans.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CannedBeans.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CannedMeat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CannedMeat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Cereal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Cereal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CookieBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CookieBox.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CupNoodle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CupNoodle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Epipen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Epipen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Flashlight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Flashlight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/InstantNoodlePacket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/InstantNoodlePacket.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Magazine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Magazine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/PackCigarette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/PackCigarette.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Snack Cake.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Snack Cake.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Vodka.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Vodka.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Water.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Water.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Whiskey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Whiskey.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPC/regularNPC/cereal_npc.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPC/regularNPC/cereal_npc.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Dialogue/DialogueItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Dialogue/DialogueItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/VR/ShotgunBulletController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7652a5c7e246/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@9774edd5e6a4/Editor/BaseInteractionEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../4483/Tower-Defense-Rogue/Assets/Scripts/Runtime/Enemy/EnemyHealth.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -125,6 +147,7 @@
       <workItem from="1773252936630" duration="8002000" />
       <workItem from="1773527907525" duration="4188000" />
       <workItem from="1773868887113" duration="6553000" />
+      <workItem from="1775517907907" duration="2169000" />
     </task>
     <servers />
   </component>
