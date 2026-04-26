@@ -10,7 +10,8 @@ public class GunVR : MonoBehaviour {
     
 
     //SO data
-    private float damage;
+    [SerializeField] private ProjectileOptions projectileOptions;
+    [SerializeField] private ProjectileVisualOptions visualOptions;
     private AudioClip gunFireSFX;
     private float roundsPerMinute;
     private bool fireMode;
@@ -23,23 +24,27 @@ public class GunVR : MonoBehaviour {
     public XRSocketInteractor socketInteractor;
 
     [Header("debug")]
+    public Rigidbody gunRB;
     public AudioSource audioSource;
     public float roundCooldown;
     public float cd;
     public bool activated;
-    
+
 
     
 
     private bool canFire;
     // Start is called before the first frame update
     void Start() {
-        damage = weaponSO.damage;
+        projectileOptions = weaponSO.projectileOptions;
+        visualOptions = weaponSO.visualOptions;
         gunFireSFX = weaponSO.gunFireSFX;
         roundsPerMinute = weaponSO.roundsPerMinute;
         fireMode = weaponSO.fireMode;
         
         roundCooldown = 60f / roundsPerMinute;
+
+        gunRB = GetComponentInParent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -63,7 +68,7 @@ public class GunVR : MonoBehaviour {
             if (canFire) {
                 currentMagazine.ammo -= 1;
                 cd = roundCooldown;
-                ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
+                ProjectileManager.instance.AddProjectile(muzzleTransform.position, gunRB.linearVelocity + muzzleTransform.forward * 500f, projectileOptions, visualOptions);
                 SoundFXManager.instance.PlaySoundFXClip(gunFireSFX, transform, 0.2f, 0f);
                 triggerReleased =  false;
             } else {

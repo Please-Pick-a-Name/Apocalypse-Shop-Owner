@@ -8,7 +8,8 @@ public class ShotgunVR : MonoBehaviour {
     public Transform pumpTransform;
 
     //SO data
-    private float damage;
+    [SerializeField] private ProjectileOptions projectileOptions;
+    [SerializeField] private ProjectileVisualOptions visualOptions;
     private AudioClip gunFireSFX;
     private float roundsPerMinute;
     public VRWeaponSO weaponSO;
@@ -29,6 +30,7 @@ public class ShotgunVR : MonoBehaviour {
     public float pumpReturnDistance = 0.02f;
 
     [Header("debug")]
+    public Rigidbody gunRB;
     public AudioSource audioSource;
     public float roundCooldown;
     public float cd;
@@ -41,7 +43,8 @@ public class ShotgunVR : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        damage = weaponSO.damage;
+        projectileOptions = weaponSO.projectileOptions;
+        visualOptions = weaponSO.visualOptions;
         gunFireSFX = weaponSO.gunFireSFX;
         roundsPerMinute = weaponSO.roundsPerMinute;
 
@@ -57,6 +60,7 @@ public class ShotgunVR : MonoBehaviour {
         if (pumpTransform != null) {
             pumpStartLocalPosition = pumpTransform.localPosition;
         }
+        gunRB = GetComponentInParent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -84,7 +88,7 @@ public class ShotgunVR : MonoBehaviour {
         requiresPump = true;
         cd = roundCooldown;
 
-        var baseVelocity = GetComponentInParent<Rigidbody>().linearVelocity;
+        var baseVelocity = gunRB.linearVelocity;
 
         for (int i = 0; i < pelletsPerShot; i++) {
             var horizontalSpread = Random.Range(-pelletSpreadAngle, pelletSpreadAngle);
@@ -92,7 +96,7 @@ public class ShotgunVR : MonoBehaviour {
             var spreadRotation = Quaternion.AngleAxis(horizontalSpread, muzzleTransform.up) * Quaternion.AngleAxis(verticalSpread, muzzleTransform.right);
             var pelletDirection = spreadRotation * muzzleTransform.forward;
 
-            ProjectileManager.instance.AddProjectile(muzzleTransform.position, baseVelocity + pelletDirection * 500f, damage);
+            ProjectileManager.instance.AddProjectile(muzzleTransform.position, baseVelocity + pelletDirection * 500f, projectileOptions, visualOptions);
         }
 
         audioSource.PlayOneShot(gunFireSFX);

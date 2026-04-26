@@ -9,7 +9,8 @@ public class Gun : MonoBehaviour {
     public float roundsPerMinute;
     public TextMeshProUGUI ammoCountText;
 
-    public float damage = 1;
+    [SerializeField] private ProjectileOptions projectileOptions;
+    [SerializeField] private ProjectileVisualOptions visualOptions;
     public float ammo = 30;
     public float maxAmmo = 30;
     public float totalAmmo = 120;
@@ -33,7 +34,7 @@ public class Gun : MonoBehaviour {
         if (Input.GetKey(KeyCode.Mouse0)) {
             if (canFire && !PlayerController.cursorMode){
                 cd = roundCooldown;
-                ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
+                ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.forward * 500, projectileOptions, visualOptions);
                 SoundFXManager.instance.PlaySoundFXClip(gunFireSFX, transform, 0.2f, 0f);
                 ammo--;
             } else {

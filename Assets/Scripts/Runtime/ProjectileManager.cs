@@ -3,14 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Flags]
+public enum ProjectileType {
+    NONE      = 0b0000,
+    EXPLOSIVE = 0b0001
+}
+
+[Serializable]
+public struct ProjectileOptions {
+    public ProjectileType projectileType;
+    public float damage;
+    public float radius;
+    public bool ignoreArmour;
+}
+
+[Flags]
+public enum ProjectileVisualType {
+    NONE   = 0b000,
+    SPRITE = 0b001,
+    LINE   = 0b010,
+    MESH   = 0b100,
+}
+
+[Serializable]
+public struct ProjectileVisualOptions {
+    public ProjectileVisualType visualType;
+    public Sprite sprite;
+    public Gradient lineGradient;
+    public Mesh mesh;
+    public Material[] meshMaterials;
+}
+
 public class ProjectileManager : MonoBehaviour {
     public static ProjectileManager instance;
 
     public GameObject projectilePrefab;
     public Transform projectilePoolTransform;
-    public int poolSize = 128;
+    public int defaultPoolSize = 64;
 
     [Header("debug")]
+    public int poolSize = 64;
     public int poolIndex = 0;
     public List<Projectile> projectiles;
 
@@ -22,6 +54,7 @@ public class ProjectileManager : MonoBehaviour {
             Destroy(gameObject);
             return;
         }
+        poolSize = defaultPoolSize;
         projectiles = new List<Projectile>(poolSize);
         for (int i = 0; i < poolSize; i++) {
             //var projectile = Instantiate(visualProjectile, projectilePool.transform);
@@ -29,8 +62,7 @@ public class ProjectileManager : MonoBehaviour {
             projectiles.Add(Instantiate(projectilePrefab, projectilePoolTransform).GetComponent<Projectile>());
         }
     }
-
-    public void AddProjectile(Vector3 origin, Vector3 velocity, float damage) {
+    public void AddProjectile(Vector3 origin, Vector3 velocity, ProjectileOptions projectileOptions, ProjectileVisualOptions projectileVisualOptions) {
         var projectile = projectiles[poolIndex];
         var occupiedCount = 0;
         while (projectile.enabled) {
@@ -44,7 +76,7 @@ public class ProjectileManager : MonoBehaviour {
 
             occupiedCount++;
         }
-        projectile.Init(origin, velocity, damage);
+        projectile.Init(origin, velocity, projectileOptions, projectileVisualOptions);
         poolIndex++;
         poolIndex %= poolSize;
     }

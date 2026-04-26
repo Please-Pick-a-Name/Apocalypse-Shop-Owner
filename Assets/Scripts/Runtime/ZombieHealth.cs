@@ -103,11 +103,16 @@ public class ZombieHealth : MonoBehaviour {
         if (!isAlive) {
             return;
         }
-        HealthCollider healthCollider;
-        if (!healthColliders.TryGetValue(collider, out healthCollider)) {
+        if (healthColliders.TryGetValue(collider, out HealthCollider healthCollider)) {
+            OnDamage(healthCollider.dmgMultiplier * damage);
             return;
         }
-        hitPoint -= healthCollider.dmgMultiplier * damage;
+    }
+    public void OnDamage(float damage) {
+        if (!isAlive) {
+            return;
+        }
+        hitPoint -= damage;
         if (hitPoint <= 0) {
             OnDeath();
         } else {

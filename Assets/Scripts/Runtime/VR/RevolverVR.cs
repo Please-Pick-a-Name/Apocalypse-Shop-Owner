@@ -13,7 +13,8 @@ public class RevolverVR : MonoBehaviour {
     
 
     //SO data
-    private float damage;
+    [SerializeField] private ProjectileOptions projectileOptions;
+    [SerializeField] private ProjectileVisualOptions visualOptions;
     private AudioClip gunFireSFX;
     private float roundsPerMinute;
     private bool fireMode;
@@ -34,6 +35,7 @@ public class RevolverVR : MonoBehaviour {
     
 
     [Header("debug")]
+    public Rigidbody gunRB;
     public AudioSource audioSource;
     public float roundCooldown;
     public float cd;
@@ -43,7 +45,8 @@ public class RevolverVR : MonoBehaviour {
     private bool canFire;
     // Start is called before the first frame update
     void Start() {
-        damage = weaponSO.damage;
+        projectileOptions = weaponSO.projectileOptions;
+        visualOptions = weaponSO.visualOptions;
         gunFireSFX = weaponSO.gunFireSFX;
         roundsPerMinute = weaponSO.roundsPerMinute;
         fireMode = weaponSO.fireMode;
@@ -51,6 +54,7 @@ public class RevolverVR : MonoBehaviour {
         roundCooldown = 60f / roundsPerMinute;
         
         grabInteractable = GetComponent<XRGrabInteractable>();
+        gunRB = GetComponentInParent<Rigidbody>();
     }
     
     private void OnEnable()
@@ -95,7 +99,7 @@ public class RevolverVR : MonoBehaviour {
                 }
                 
                 cd = roundCooldown;
-                ProjectileManager.instance.AddProjectile(muzzleTransform.position, GetComponentInParent<Rigidbody>().linearVelocity + muzzleTransform.TransformDirection(new(0, 0, 500)), damage);
+                ProjectileManager.instance.AddProjectile(muzzleTransform.position, gunRB.linearVelocity + muzzleTransform.forward * 500f, projectileOptions, visualOptions);
                 SoundFXManager.instance.PlaySoundFXClip(gunFireSFX, transform, 0.2f, 0f);
                 triggerReleased =  false;
             } else {
