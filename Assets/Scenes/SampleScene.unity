@@ -214,7 +214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shotgun Sheel
+  m_text: Double Barrel Shotgun
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4976,7 +4976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $10
+  m_text: $100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5754,7 +5754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pistol
+  m_text: Shotgun Ammo (20)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9668,7 +9668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $200
+  m_text: $10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10659,29 +10659,29 @@ MonoBehaviour:
   shoppingListGroup: {fileID: 1189034888}
   shopItemUiPrefab: {fileID: 1046620945472053112, guid: 1b61998131e1c0f4bba37a5d48256e9e, type: 3}
   gunShopItems:
+  - cost: 25
+    gameObject: {fileID: 8295008471864550724, guid: 34f7a5cd247738e4ba95d0b652c35d15, type: 3}
+    displayName: Revolver
   - cost: 20
     gameObject: {fileID: 1072123504539672658, guid: e7fff5480331cc54c8ca01cfffd7c5d4, type: 3}
     displayName: Revolver Ammo
   - cost: 50
     gameObject: {fileID: 5640693343525578520, guid: b90857929a575834b9f436e73f674da6, type: 3}
     displayName: Double Barrel Shotgun
-  - cost: 5
-    gameObject: {fileID: 4371757484294708341, guid: e7f6431623e6c344bba86e07ef53256c, type: 3}
-    displayName: Shotgun Sheel
+  - cost: 25
+    gameObject: {fileID: 1908577155631829794, guid: cb484dd91cd7d9642813f630dead06ad, type: 3}
+    displayName: Shotgun Ammo (20)
   - cost: 100
     gameObject: {fileID: 7610814159382165516, guid: ad66c32de37c13c43849e315875d801f, type: 3}
     displayName: Pistol
   - cost: 10
     gameObject: {fileID: 8814805762939931158, guid: 3ceddc6b445aed349b92b34c96835cf3, type: 3}
     displayName: Pistol Magazine
-  - cost: 200
-    gameObject: {fileID: 2309158033536817216, guid: 7fb0ba6643819694e8da432c2ebbb472, type: 3}
-    displayName: Pump Action Shotgun
   - cost: 350
     gameObject: {fileID: 3542316036824164012, guid: fdc22e01a67a07644a4f43db115ea941, type: 3}
     displayName: Assult Rifle
   - cost: 50
-    gameObject: {fileID: 4064893865958012713, guid: 48a6ebd63c3ae5e448fb909e1f761686, type: 3}
+    gameObject: {fileID: 8753342309018813271, guid: 0919d9976bbe4f84ca1a95fd45d2abf5, type: 3}
     displayName: Assult Rifle Magazine
   itemUIs:
   - {fileID: 1079713756}
@@ -13582,7 +13582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Double Barrel Shotgun
+  m_text: Revolver Ammo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15828,7 +15828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $50
+  m_text: $20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18476,7 +18476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $5
+  m_text: $50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20801,7 +20801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pistol Magazine
+  m_text: Pistol
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30509,7 +30509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Revolver Ammo
+  m_text: Revolver
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31138,7 +31138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $100
+  m_text: $25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -110605,7 +110605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $20
+  m_text: $25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -112905,7 +112905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pump Action Shotgun
+  m_text: Pistol Magazine
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
