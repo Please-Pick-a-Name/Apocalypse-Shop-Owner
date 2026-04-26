@@ -6,29 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/GasMask.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/GasMask.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/KeyCard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/KeyCard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/ResearchLog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/KeyItems/ResearchLog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Antiseptic.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Antiseptic.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Apple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Apple.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Bandage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Bandage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CannedBeans.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CannedBeans.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CannedMeat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CannedMeat.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Cereal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Cereal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CookieBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CookieBox.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CupNoodle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/CupNoodle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Epipen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Epipen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Flashlight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Flashlight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/InstantNoodlePacket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/InstantNoodlePacket.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Magazine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Magazine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/PackCigarette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/PackCigarette.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Snack Cake.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Snack Cake.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Vodka.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Vodka.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Water.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Water.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Whiskey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogueItems/NormalItems/Whiskey.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPC/regularNPC/cereal_npc.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPC/regularNPC/cereal_npc.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/supermarket mesh,texture/Materials/Cash register.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/supermarket mesh,texture/Materials/Cash register.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/supermarket mesh,texture/materals/Frame.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/supermarket mesh,texture/materals/Frame.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/supermarket mesh,texture/materals/can coke 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/Polygon zombie package/mesh.texture/supermarket mesh,texture/materals/can coke 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/ShotgunShell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/ShotgunShell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.9/Starter Assets/XRI Default Input Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.9/Starter Assets/XRI Default Input Actions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Dialogue/DialogueItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Dialogue/DialogueItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VRGunTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VRGunTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/InGameESCMenuHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/InGameESCMenuHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +134,8 @@
       <workItem from="1773527907525" duration="4188000" />
       <workItem from="1773868887113" duration="6553000" />
       <workItem from="1775517907907" duration="2169000" />
+      <workItem from="1776991247702" duration="9024000" />
+      <workItem from="1777219514512" duration="504000" />
     </task>
     <servers />
   </component>
