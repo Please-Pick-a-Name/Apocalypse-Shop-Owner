@@ -101,7 +101,7 @@ public class DoubleBarrelVR : MonoBehaviour {
                     ProjectileManager.instance.AddProjectile(muzzleTransform.position, baseVelocity + pelletDirection * 500f, projectileOptions, visualOptions);
                 }
 
-                audioSource.PlayOneShot(gunFireSFX);
+                SoundFXManager.instance.PlaySoundFXClip(gunFireSFX, transform, 0.2f, 0f);
             
                 triggerReleased =  false;
             } else {

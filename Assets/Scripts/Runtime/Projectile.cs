@@ -16,6 +16,8 @@ public class Projectile : MonoBehaviour {
     [SerializeField] private MeshRenderer meshRenderer;
     public bool physicsEnabled = false;
 
+    
+    
     public void Init(Vector3 origin, Vector3 velocity, ProjectileOptions newProjectileOptions, ProjectileVisualOptions newVisualOptions) {
         transform.position = origin;
         vel = velocity;
@@ -103,6 +105,7 @@ public class Projectile : MonoBehaviour {
         }
 
         if (projectileOptions.projectileType.HasFlag(ProjectileType.EXPLOSIVE)) {
+            SoundFXManager.instance.PlaySoundFXClip(projectileOptions.hitSound, transform, 0.2f, 0f);
             var hitColliderCount = Physics.OverlapSphereNonAlloc(hitPosition, projectileOptions.radius, hitColliders);
             for (int i = 0; i < hitColliderCount; i++) {
                 var hitCollider = hitColliders[i];

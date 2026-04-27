@@ -15,6 +15,7 @@ public struct ProjectileOptions {
     public float damage;
     public float radius;
     public bool ignoreArmour;
+    public AudioClip hitSound;
 }
 
 [Flags]

@@ -69,7 +69,7 @@ public class LauncherVR : MonoBehaviour {
                 
                 cd = roundCooldown;
                 
-                ProjectileManager.instance.AddProjectile(muzzleTransform.position, gunRB.linearVelocity + muzzleTransform.forward * 500f, projectileOptions, visualOptions);
+                ProjectileManager.instance.AddProjectile(muzzleTransform.position, gunRB.linearVelocity + muzzleTransform.forward * 100f, projectileOptions, visualOptions);
                 SoundFXManager.instance.PlaySoundFXClip(gunFireSFX, transform, 0.2f, 0f);
                 triggerReleased =  false;
             } else {
