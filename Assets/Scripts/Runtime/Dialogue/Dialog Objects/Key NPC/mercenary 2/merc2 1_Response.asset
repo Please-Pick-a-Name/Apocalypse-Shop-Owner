@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: merc2 1_Response
   m_EditorClassIdentifier: 
   name: Mercenary
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: f70875f1810b5134f951dcb1fa97878e, type: 3}
   talkingClip: {fileID: 8300000, guid: f6c857dbc4602471a97d0b3a0e1e03f3, type: 3}
   sentences:
   - "I\u2019ve got just the thing\r\n"

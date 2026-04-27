@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: apple 2b
   m_EditorClassIdentifier: 
   name: Citizen
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 08fd3148617f9c64ea3fe12bffc80307, type: 3}
   talkingClip: {fileID: 8300000, guid: f6c857dbc4602471a97d0b3a0e1e03f3, type: 3}
   sentences:
   - Alright. I'll come back later.
