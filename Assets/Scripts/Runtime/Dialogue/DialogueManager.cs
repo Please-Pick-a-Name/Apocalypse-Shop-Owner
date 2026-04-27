@@ -66,7 +66,7 @@ public class DialogueManager : MonoBehaviour {
         }
         dialogueItemsInTrigger.Remove(dialogueItem);
     }
-
+    
     void OnValidate() {
     }
 
@@ -80,6 +80,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     void Update() {
+        dialogueItemsInTrigger.RemoveAll(item => item == null);
         if (curNode is OptionDialogueNode options) {
             for (int i = 0; i < options.optionsRequireItems.Length; i++) {
                 var requiredItemID = options.optionsRequireItems[i];
