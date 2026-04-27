@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour {
     
     
     public void Init(Vector3 origin, Vector3 velocity, ProjectileOptions newProjectileOptions, ProjectileVisualOptions newVisualOptions) {
+        lastPos = origin;
         transform.position = origin;
         vel = velocity;
         projectileOptions = newProjectileOptions;
