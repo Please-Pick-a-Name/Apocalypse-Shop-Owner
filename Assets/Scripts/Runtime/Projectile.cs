@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour {
     public ProjectileVisualOptions visualOptions;
     public Vector3 lastPos;
     public Vector3 vel;
+    public LayerMask projectileHitMask;
     
     [Header("debug")]
     [SerializeField] private LineRenderer lineRenderer;
@@ -63,7 +64,7 @@ public class Projectile : MonoBehaviour {
 
         lastPos = transform.position;
         var maxDistance = vel.magnitude * dt;
-        if (Physics.Raycast(transform.position, vel, out RaycastHit hitInfo, maxDistance)) {
+        if (Physics.Raycast(transform.position, vel, out RaycastHit hitInfo, maxDistance, projectileHitMask)) {
             transform.position = hitInfo.point;
             OnProjectileHit(hitInfo.collider, transform.position);
             Reset();

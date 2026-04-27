@@ -175,6 +175,9 @@ MonoBehaviour:
     meshMaterials: []
   lastPos: {x: 0, y: 0, z: 0}
   vel: {x: 0, y: 0, z: 0}
+  projectileHitMask:
+    serializedVersion: 2
+    m_Bits: 1
   lineRenderer: {fileID: 0}
   spriteRenderer: {fileID: 0}
   meshFilter: {fileID: 0}

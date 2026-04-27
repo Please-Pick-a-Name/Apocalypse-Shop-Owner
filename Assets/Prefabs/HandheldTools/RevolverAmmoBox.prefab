@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 7729886066357260652}
   bulletPrefab: {fileID: 1267356810547674842, guid: 265a49750e54ef1469a1d2f452cffc6f, type: 3}
-  ammoRemaining: 12
+  ammoRemaining: 18
 --- !u!1 &2456015031673345894
 GameObject:
   m_ObjectHideFlags: 0

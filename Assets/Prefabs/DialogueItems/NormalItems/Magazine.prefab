@@ -221,35 +221,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.119
+      value: -0.04239731
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.025046
+      value: 0.0008504252
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.284
+      value: -0.033018496
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.70710677
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8075515223874763239, guid: 8c50b6e7283a6ba438ded7d3296120c7, type: 3}
       propertyPath: m_LocalRotation.y
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: magazine
-  text: {fileID: 0}
+  text: {fileID: 2788883089558100287}
 --- !u!65 &-7109182839336342814
 BoxCollider:
   m_ObjectHideFlags: 0
