@@ -28641,7 +28641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34155f125667d24e8231b8c50ac1c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 100
   maxHealth: 100
   slider: {fileID: 475994353}
   gameOverPanel: {fileID: 195014148}

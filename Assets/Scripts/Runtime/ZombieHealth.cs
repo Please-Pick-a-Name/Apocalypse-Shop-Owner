@@ -131,7 +131,7 @@ public class ZombieHealth : MonoBehaviour {
         }
     }
     public void OnReach() {
-        CurrencyManager.Instance.RemoveCurrency(50);
+        //CurrencyManager.Instance.RemoveCurrency(50);
         
         //transform.DORotate(new(-90, 180, 0), 1f);
         //isAlive = false;
