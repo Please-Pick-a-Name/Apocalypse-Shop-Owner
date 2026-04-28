@@ -4,7 +4,7 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager Instance { get; private set; }
-    private int currency;
+    [SerializeField] private int currency;
     public TextMeshProUGUI currencyText;
     void Awake() {
         if (Instance != null && Instance != this)
