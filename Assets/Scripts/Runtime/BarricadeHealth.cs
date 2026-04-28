@@ -7,6 +7,7 @@ public class BarricadeHealth : MonoBehaviour
     public float maxHealth = 100f;
     [SerializeField] public Slider slider;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject settingsPanel;
 
     public GameObject[] visualStates;
     void Start()
@@ -61,6 +62,7 @@ public class BarricadeHealth : MonoBehaviour
 
     void GameOver() {
         gameOverPanel.SetActive(true);
+        settingsPanel.SetActive(false);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
     }
