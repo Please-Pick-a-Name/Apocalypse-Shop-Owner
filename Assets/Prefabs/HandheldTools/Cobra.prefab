@@ -272,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 64
   m_Handedness: 0
   m_AttachTransform: {fileID: 1515149099778700865}
   m_KeepSelectedTargetValid: 1
@@ -1268,6 +1268,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleTransform: {fileID: 5999985546752874809}
+  projectileOptions:
+    projectileType: 0
+    damage: 0
+    radius: 0
+    ignoreArmour: 0
+    hitSound: {fileID: 0}
+  visualOptions:
+    visualType: 0
+    sprite: {fileID: 0}
+    lineGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    mesh: {fileID: 0}
+    meshMaterials: []
   weaponSO: {fileID: 11400000, guid: b95b4d4dd44081b46a62c4b448b2335b, type: 2}
   ammo: 6
   cylinder: {fileID: 1647843911933917952}
@@ -1283,6 +1324,7 @@ MonoBehaviour:
   - {fileID: 3954992911597134248}
   - {fileID: 8527879595923332976}
   toggleCylinderAction: {fileID: -5609969889240340965, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  gunRB: {fileID: 0}
   audioSource: {fileID: 0}
   roundCooldown: 0
   cd: 0

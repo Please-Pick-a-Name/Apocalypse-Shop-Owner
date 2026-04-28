@@ -7,10 +7,8 @@
     <list default="true" id="4ba26947-6c96-421d-ba49-2467f51712a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Apocalypse-Shop-Owner/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Aileron-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Aileron-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/Pistol.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/PistolMag.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HandheldTools/PistolMag.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/ZombieHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/ZombieHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/CurrencyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/CurrencyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

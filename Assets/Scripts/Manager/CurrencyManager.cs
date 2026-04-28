@@ -4,8 +4,9 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager Instance { get; private set; }
-    private int currency;
-    public TextMeshProUGUI currencyText;
+    [SerializeField] private int currency;
+    public TextMeshProUGUI currencyTextRegister,  currencyTextShop;
+    
     void Awake() {
         if (Instance != null && Instance != this)
         {
@@ -18,7 +19,8 @@ public class CurrencyManager : MonoBehaviour
     }
 
     void Update() {
-        currencyText.SetText("$" + currency);
+        currencyTextRegister.SetText("$" + currency);
+        currencyTextShop.SetText("$" + currency);
     }
     public void AddCurrency(int amount) {
         currency = currency + amount;
