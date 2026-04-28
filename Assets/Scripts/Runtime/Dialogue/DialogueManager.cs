@@ -81,25 +81,27 @@ public class DialogueManager : MonoBehaviour {
 
     void Update() {
         dialogueItemsInTrigger.RemoveAll(item => item == null);
+        
         if (curNode is OptionDialogueNode options) {
             for (int i = 0; i < options.optionsRequireItems.Length; i++) {
                 var requiredItemID = options.optionsRequireItems[i];
-                if (requiredItemID == ""){ // nothing is wanted, keep interactable as true
+                if (string.IsNullOrEmpty(requiredItemID)){ // nothing is wanted, keep interactable as true
                     optionButtons[i].interactable = true;
                     continue;
                 }
-
-                // optionButtons[i].interactable = false; // make button look weird
-                bool markDisable = true;
+                bool hasItem = false;
                 foreach (var dialogueItem in dialogueItemsInTrigger){
                     if (dialogueItem.itemID == requiredItemID){
-                        optionButtons[i].interactable = true;
-                        markDisable = false;
+                        hasItem = true;
                         break;
                     }
                 }
-                if (markDisable) {
-                    optionButtons[i].interactable = false;
+                optionButtons[i].interactable = hasItem;
+            }
+        } else {
+            for (int i = 0; i < optionButtons.Length; i++) {
+                if (optionButtons[i] != null) {
+                    optionButtons[i].interactable = true;
                 }
             }
         }
