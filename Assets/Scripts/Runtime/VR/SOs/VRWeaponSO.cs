@@ -7,5 +7,6 @@ public class VRWeaponSO : ScriptableObject
     public ProjectileVisualOptions visualOptions;
     public float roundsPerMinute;
     public AudioClip gunFireSFX;
+    public AudioClip gunDryAmmoSFX;
     public bool fireMode;// 0 for semi, 1 for full auto
 }

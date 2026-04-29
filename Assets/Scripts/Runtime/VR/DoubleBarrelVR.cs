@@ -16,6 +16,7 @@ public class DoubleBarrelVR : MonoBehaviour {
     [SerializeField] private ProjectileOptions projectileOptions;
     [SerializeField] private ProjectileVisualOptions visualOptions;
     private AudioClip gunFireSFX;
+    private AudioClip gunDryAmmoSFX;
     private float roundsPerMinute;
     private bool fireMode;
     public VRWeaponSO weaponSO;
@@ -51,6 +52,7 @@ public class DoubleBarrelVR : MonoBehaviour {
         projectileOptions = weaponSO.projectileOptions;
         visualOptions = weaponSO.visualOptions;
         gunFireSFX = weaponSO.gunFireSFX;
+        gunDryAmmoSFX = weaponSO.gunDryAmmoSFX;
         roundsPerMinute = weaponSO.roundsPerMinute;
         fireMode = weaponSO.fireMode;
         
@@ -64,10 +66,13 @@ public class DoubleBarrelVR : MonoBehaviour {
     {
         toggleCylinderAction.action.performed += OnToggleBarrel;
     }
-    
 
+    bool wasActivited = false;
+    bool activatePressed = false;
     // Update is called once per frame
     void Update() {
+        activatePressed = activated && wasActivited != activated;
+        wasActivited = activated;
 
         if (fireMode) {//full auto
             canFire = cd <= 0 && ammo > 0;
@@ -104,8 +109,8 @@ public class DoubleBarrelVR : MonoBehaviour {
                 SoundFXManager.instance.PlaySoundFXClip(gunFireSFX, transform, 0.2f, 0f);
             
                 triggerReleased =  false;
-            } else {
-                // play dry ammo sound here ig
+            } else if (activatePressed && ammo < 0) {
+                SoundFXManager.instance.PlaySoundFXClip(gunDryAmmoSFX, transform, 0.2f, 0f);
             }
         }
         cd -= Time.deltaTime;

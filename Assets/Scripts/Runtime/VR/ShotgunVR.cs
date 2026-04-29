@@ -11,6 +11,7 @@ public class ShotgunVR : MonoBehaviour {
     [SerializeField] private ProjectileOptions projectileOptions;
     [SerializeField] private ProjectileVisualOptions visualOptions;
     private AudioClip gunFireSFX;
+    private AudioClip gunDryAmmoSFX;
     private float roundsPerMinute;
     public VRWeaponSO weaponSO;
 
@@ -46,6 +47,7 @@ public class ShotgunVR : MonoBehaviour {
         projectileOptions = weaponSO.projectileOptions;
         visualOptions = weaponSO.visualOptions;
         gunFireSFX = weaponSO.gunFireSFX;
+        gunDryAmmoSFX = weaponSO.gunDryAmmoSFX;
         roundsPerMinute = weaponSO.roundsPerMinute;
 
         roundCooldown = 60f / roundsPerMinute;
@@ -63,8 +65,12 @@ public class ShotgunVR : MonoBehaviour {
         gunRB = GetComponentInParent<Rigidbody>();
     }
 
+    bool wasActivited = false;
+    bool activatePressed = false;
     // Update is called once per frame
     void Update() {
+        activatePressed = activated && wasActivited != activated;
+        wasActivited = activated;
         ammo = tubeShells + (chamberLoaded ? 1 : 0);
 
         TrackPump();
@@ -75,8 +81,8 @@ public class ShotgunVR : MonoBehaviour {
             if (canFire) {
                 FireShot();
                 triggerReleased = false;
-            } else {
-                // play dry ammo sound here ig
+            } else if (activatePressed && ammo < 0) {
+                SoundFXManager.instance.PlaySoundFXClip(gunDryAmmoSFX, transform, 0.2f, 0f);
             }
         }
 

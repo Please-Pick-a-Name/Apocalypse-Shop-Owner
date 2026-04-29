@@ -52,4 +52,5 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
   roundsPerMinute: 200
   gunFireSFX: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
+  gunDryAmmoSFX: {fileID: 8300000, guid: e4ff83c452c186840b563704d4c48460, type: 3}
   fireMode: 0

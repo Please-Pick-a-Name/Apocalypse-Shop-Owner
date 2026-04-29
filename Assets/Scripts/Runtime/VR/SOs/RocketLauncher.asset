@@ -56,4 +56,5 @@ MonoBehaviour:
     - {fileID: 7626191068330388430, guid: 3a57cefc024c3c141bc60f7a29da910f, type: 3}
   roundsPerMinute: 200
   gunFireSFX: {fileID: 8300000, guid: 09b5e41926c253649b1780095b0ce1b2, type: 3}
+  gunDryAmmoSFX: {fileID: 8300000, guid: e4ff83c452c186840b563704d4c48460, type: 3}
   fireMode: 0
