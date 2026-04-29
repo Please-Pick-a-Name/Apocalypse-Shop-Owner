@@ -4,7 +4,7 @@ using UnityEngine;
 public class ZombieManager : MonoBehaviour
 {
     public static ZombieManager instance;
-    public HashSet<ZombieHealth> zombies;
+    public HashSet<ZombieHealth> zombies = new HashSet<ZombieHealth>();
     public int count = 0;
     public bool isZombieClear;
 
