@@ -32,9 +32,9 @@ public class NPCSpawner : MonoBehaviour {
         }
         instance = this;
 
-        //SpawnKeyNPC();
-        //regularSpawnCount = 0;
-        //timer = spawnInterval;
+        SpawnKeyNPC();
+        regularSpawnCount = 0;
+        timer = spawnInterval;
     }
 
     void Update() {

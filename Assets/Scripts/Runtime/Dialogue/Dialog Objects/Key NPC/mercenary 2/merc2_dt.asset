@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7938924704417777506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0553200d4e9dc74c8278e394494ac19, type: 3}
+  m_Name: Dialogue Zombie
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 488, y: -152}
+  ports:
+    keys:
+    - prevNode
+    - nextNode
+    values:
+    - _fieldName: prevNode
+      _node: {fileID: -7938924704417777506}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: nextNode
+        node: {fileID: -1687186113251030859}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextNode
+      _node: {fileID: -7938924704417777506}
+      _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: prevNode
+        node: {fileID: -7440653194658422273}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  spawnInterval: 10
+  spawnCount: 2
+  enemiesUnlocked: -1
+  prevNode: {fileID: 0}
+  nextNode: {fileID: 0}
 --- !u!114 &-7440653194658422273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,7 +59,7 @@ MonoBehaviour:
   m_Name: Dialogue Control
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 528, y: -136.5}
+  position: {x: 728, y: -120}
   ports:
     keys:
     - prevNode
@@ -23,7 +69,7 @@ MonoBehaviour:
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: nextNode
-        node: {fileID: -1687186113251030859}
+        node: {fileID: -7938924704417777506}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -66,7 +112,7 @@ MonoBehaviour:
       _typeQualifiedName: XNode.Node, XNode, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: prevNode
-        node: {fileID: -7440653194658422273}
+        node: {fileID: -7938924704417777506}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -92,6 +138,7 @@ MonoBehaviour:
   - {fileID: 4623632786653689746}
   - {fileID: -1687186113251030859}
   - {fileID: -7440653194658422273}
+  - {fileID: -7938924704417777506}
 --- !u!114 &682998562093582586
 MonoBehaviour:
   m_ObjectHideFlags: 0
