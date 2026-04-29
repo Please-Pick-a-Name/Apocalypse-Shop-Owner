@@ -22,10 +22,11 @@ public struct ProjectileOptions {
 
 [Flags]
 public enum ProjectileVisualType {
-    NONE   = 0b000,
-    SPRITE = 0b001,
-    LINE   = 0b010,
-    MESH   = 0b100,
+    NONE     = 0b0000,
+    SPRITE   = 0b0001,
+    LINE     = 0b0010,
+    MESH     = 0b0100,
+    PARTICLE = 0b1000,
 }
 
 [Serializable]

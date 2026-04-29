@@ -8,16 +8,17 @@ public class Projectile : MonoBehaviour {
     public Vector3 lastPos;
     public Vector3 vel;
     public LayerMask projectileHitMask;
-    
+
     [Header("debug")]
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private MeshFilter meshFilter;
     [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private ParticleSystem particleSystem;
     public bool physicsEnabled = false;
 
-    
-    
+
+
     public void Init(Vector3 origin, Vector3 velocity, ProjectileOptions newProjectileOptions, ProjectileVisualOptions newVisualOptions) {
         lastPos = origin;
         transform.position = origin;
@@ -30,20 +31,25 @@ public class Projectile : MonoBehaviour {
 
         spriteRenderer.sprite = visualOptions.sprite;
         spriteRenderer.enabled = visualOptions.visualType.HasFlag(ProjectileVisualType.SPRITE);
-        
+
         lineRenderer.colorGradient = visualOptions.lineGradient;
         lineRenderer.enabled = visualOptions.visualType.HasFlag(ProjectileVisualType.LINE);
-        
+
         meshFilter.mesh = visualOptions.mesh;
         meshRenderer.materials = visualOptions.meshMaterials;
         meshRenderer.enabled = visualOptions.visualType.HasFlag(ProjectileVisualType.MESH);
+
+        if (visualOptions.visualType.HasFlag(ProjectileVisualType.PARTICLE)) {
+            particleSystem.Play();
+        }
     }
     public void Awake() {
         lineRenderer = GetComponentInChildren<LineRenderer>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         meshFilter = GetComponentInChildren<MeshFilter>();
         meshRenderer = GetComponentInChildren<MeshRenderer>();
-        enabled = false;
+        particleSystem = GetComponentInChildren<ParticleSystem>();
+        Reset();
     }
 
     public void FixedUpdate() {
@@ -89,6 +95,9 @@ public class Projectile : MonoBehaviour {
         if (visualOptions.visualType.HasFlag(ProjectileVisualType.MESH)) {
 
         }
+        if (visualOptions.visualType.HasFlag(ProjectileVisualType.PARTICLE)) {
+
+        }
     }
 
     [SerializeField] private Collider[] hitColliders = new Collider[64];
@@ -127,6 +136,7 @@ public class Projectile : MonoBehaviour {
         lineRenderer.enabled = false;
         spriteRenderer.enabled = false;
         meshRenderer.enabled = false;
+        particleSystem.Stop();
         enabled = false;
     }
 }
