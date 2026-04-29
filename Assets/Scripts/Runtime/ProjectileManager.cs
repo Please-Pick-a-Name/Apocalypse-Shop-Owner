@@ -16,6 +16,8 @@ public struct ProjectileOptions {
     public float radius;
     public bool ignoreArmour;
     public AudioClip hitSound;
+    
+    public GameObject prefabToSpawnOnHit;
 }
 
 [Flags]

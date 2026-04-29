@@ -18,6 +18,7 @@ MonoBehaviour:
     radius: 2.5
     ignoreArmour: 0
     hitSound: {fileID: 8300000, guid: 2ff42f5e813cb7946983c9c6b8098e10, type: 3}
+    prefabToSpawnOnHit: {fileID: 5772783944446616764, guid: 9bf9aaf973403a545b54d11768c9f749, type: 3}
   visualOptions:
     visualType: 4
     sprite: {fileID: 0}

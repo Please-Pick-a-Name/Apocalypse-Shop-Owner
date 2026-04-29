@@ -69,7 +69,7 @@ public class Projectile : MonoBehaviour {
         var maxDistance = vel.magnitude * dt;
         if (Physics.Raycast(transform.position, vel, out RaycastHit hitInfo, maxDistance, projectileHitMask)) {
             transform.position = hitInfo.point;
-            OnProjectileHit(hitInfo.collider, transform.position);
+            OnProjectileHit(hitInfo, transform.position);
             Reset();
             return;
         }
@@ -92,15 +92,15 @@ public class Projectile : MonoBehaviour {
     }
 
     [SerializeField] private Collider[] hitColliders = new Collider[64];
-    public void OnProjectileHit(Collider hitTarget, Vector3 hitPosition) {
+    public void OnProjectileHit(RaycastHit hitInfo, Vector3 hitPosition) {
         physicsEnabled = false;
-        if (hitTarget != null) {
-            var zombieHealth = hitTarget.GetComponentInParent<ZombieHealth>();
+        if (hitInfo.collider != null) {
+            var zombieHealth = hitInfo.collider.GetComponentInParent<ZombieHealth>();
             if (zombieHealth) {
                 if (projectileOptions.ignoreArmour) {
                     zombieHealth.OnDamage(projectileOptions.damage);
                 } else {
-                    zombieHealth.OnHit(hitTarget, projectileOptions.damage);
+                    zombieHealth.OnHit(hitInfo.collider, projectileOptions.damage);
                 }
             }
         }
@@ -115,6 +115,10 @@ public class Projectile : MonoBehaviour {
                     zombieHealthAOE.OnHit(hitCollider, projectileOptions.damage);
                 }
             }
+        }
+        var prefabToSpawnOnHit = projectileOptions.prefabToSpawnOnHit;
+        if (prefabToSpawnOnHit != null) {
+            Instantiate(prefabToSpawnOnHit, transform.position, Quaternion.LookRotation(hitInfo.normal));
         }
     }
 
