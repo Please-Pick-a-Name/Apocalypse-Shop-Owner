@@ -129,6 +129,7 @@ public class ZombieHealth : MonoBehaviour {
             case 1: anim.SetTrigger("Death1"); break;
             case 2: anim.SetTrigger("Death2"); break;
         }
+        ZombieManager.instance.RemoveZombie(this);
     }
     public void OnReach() {
         //CurrencyManager.Instance.RemoveCurrency(50);

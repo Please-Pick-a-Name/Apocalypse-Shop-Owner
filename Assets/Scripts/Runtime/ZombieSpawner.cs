@@ -56,6 +56,7 @@ public class ZombieSpawner : MonoBehaviour {
                 var zombieGO = Instantiate(prefabToSpawn, path.transform.TransformPoint(path.GetPosition(0)), quaternion.identity, hordeGroup.transform);
                 var zombieHealth = zombieGO.GetComponent<ZombieHealth>();
                 zombieHealth.path = path;
+                ZombieManager.instance.AddZombie(zombieHealth);
             }
             cd += spawnInterval;
         }

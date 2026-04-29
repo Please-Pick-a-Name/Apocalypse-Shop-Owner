@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NPCSpawner : MonoBehaviour {
     public static NPCSpawner instance;
@@ -7,7 +8,6 @@ public class NPCSpawner : MonoBehaviour {
     [Header("Spawn Settings")]
     public float spawnInterval = 10f;
     public Transform spawnPoint;
-    private float timer;
     
     [Header("NPC Pools")]
     public List<GameObject> regularNpcPrefabs;
@@ -15,10 +15,15 @@ public class NPCSpawner : MonoBehaviour {
     [Header("Path Settings")]
     public Transform[] pathPoints;
 
-    private int regularSpawnCount = 0;
-    private int keyNpcIndex = 0;
+    [Header("When Spawn Wave endded")]
+    public UnityEvent onSpawnWaveEnd = new();
+    
+    [Header("debug")]
+    [SerializeField] private float timer;
+    [SerializeField] private int regularSpawnCount = 0;
+    [SerializeField] private int keyNpcIndex = 0;
 
-    private GameObject currentNPC;
+    [SerializeField] private GameObject currentNPC;
 
     void Awake() {
         if (instance != null & instance != this) {
@@ -27,9 +32,9 @@ public class NPCSpawner : MonoBehaviour {
         }
         instance = this;
 
-        SpawnKeyNPC();
-        regularSpawnCount = 0;
-        timer = spawnInterval;
+        //SpawnKeyNPC();
+        //regularSpawnCount = 0;
+        //timer = spawnInterval;
     }
 
     void Update() {
@@ -63,13 +68,15 @@ public class NPCSpawner : MonoBehaviour {
     public void SpawnKeyNPC() {
         if(keyNpcPrefabs.Count == 0) return;
 
-        SpawnNPC(keyNpcPrefabs[keyNpcIndex]);
         if(keyNpcIndex < keyNpcPrefabs.Count) {
-            keyNpcIndex = keyNpcIndex + 1; 
+            SpawnNPC(keyNpcPrefabs[keyNpcIndex]);
+            keyNpcIndex++; 
         }
         else {
             Debug.Log("reached the end");
             // ending 
+            onSpawnWaveEnd.Invoke();
+            enabled = false;
         }
         
     }

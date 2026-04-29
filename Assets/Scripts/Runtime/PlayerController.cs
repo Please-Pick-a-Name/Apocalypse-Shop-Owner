@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
             camPitch += rotPitch * Time.deltaTime * pitchSpeed * ySensitivity;
         }
         camPitch = Mathf.Clamp(camPitch, -89, 89);
-        Debug.Log("Cursor Mode: " + cursorMode);
+        //Debug.Log("Cursor Mode: " + cursorMode);
     }
 
     void UpdateGetInput() {

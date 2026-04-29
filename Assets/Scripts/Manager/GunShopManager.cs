@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -55,7 +56,7 @@ public class GunShopManager : MonoBehaviour {
         for (; i < itemUIs.Count; i++){
             if (i >= gunShopItems.Count) {
                 for (int j = i; j < itemUIs.Count; j++){
-                    Destroy(itemUIs[j]);
+                    StartCoroutine(Destroy(itemUIs[j]));
                 }
                 itemUIs.RemoveRange(i, itemUIs.Count - 1);
                 break;
@@ -68,6 +69,10 @@ public class GunShopManager : MonoBehaviour {
             itemUIs[i].transform.localPosition = new(0, i*-64, 0);
             UpdateShopItemUI(itemUIs[i], item);
         }
+    }
+    IEnumerator Destroy(GameObject go) {
+        yield return new WaitForEndOfFrame();
+        DestroyImmediate(go);
     }
 
     public void SpawnSomething(GameObject toSpawn) {
