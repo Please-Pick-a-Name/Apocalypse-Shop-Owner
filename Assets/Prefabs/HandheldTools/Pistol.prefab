@@ -743,6 +743,7 @@ MonoBehaviour:
     radius: 0
     ignoreArmour: 0
     hitSound: {fileID: 0}
+    prefabToSpawnOnHit: {fileID: 0}
   visualOptions:
     visualType: 0
     sprite: {fileID: 0}
@@ -795,7 +796,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7610814159382165516}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

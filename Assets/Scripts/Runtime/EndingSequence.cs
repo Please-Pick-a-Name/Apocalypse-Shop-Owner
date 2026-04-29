@@ -33,7 +33,7 @@ public class EndingSequence : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
         Debug.Log("sequence stage 3");
-        PlayerController.instance.EnableCursor();
+        //PlayerController.instance.EnableCursor();
         onEndingSequenceEnd.Invoke();
     }
 }

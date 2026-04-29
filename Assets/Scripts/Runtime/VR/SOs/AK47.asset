@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileOptions:
     projectileType: 0
-    damage: 10
+    damage: 20
     radius: 0
     ignoreArmour: 0
     hitSound: {fileID: 0}
+    prefabToSpawnOnHit: {fileID: 0}
   visualOptions:
     visualType: 2
     sprite: {fileID: 0}

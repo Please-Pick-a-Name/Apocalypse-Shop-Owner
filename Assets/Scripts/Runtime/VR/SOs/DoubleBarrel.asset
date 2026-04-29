@@ -17,8 +17,10 @@ MonoBehaviour:
     damage: 15
     radius: 0
     ignoreArmour: 0
+    hitSound: {fileID: 0}
+    prefabToSpawnOnHit: {fileID: 0}
   visualOptions:
-    visualType: -1
+    visualType: 2
     sprite: {fileID: 0}
     lineGradient:
       serializedVersion: 2
@@ -50,6 +52,8 @@ MonoBehaviour:
       m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
+    mesh: {fileID: 0}
+    meshMaterials: []
   roundsPerMinute: 200
   gunFireSFX: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
   gunDryAmmoSFX: {fileID: 8300000, guid: e4ff83c452c186840b563704d4c48460, type: 3}
